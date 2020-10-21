@@ -1,9 +1,10 @@
 import React from 'react';
-import Index from "./pages/index/index"
+import MyIndex from "./pages/index/IndexPage"
+
 function App() {
     return (
         <div className="App">
-            <Index />
+            <MyIndex/>
         </div>
     )
 }
