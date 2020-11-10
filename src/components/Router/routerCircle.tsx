@@ -24,17 +24,24 @@ function circleTitleClassName(arr: circleMenu[]): string {
 
 }
 
-function smallCircle(arr: circleMenu[]) {
-
+function smallCircle(arr: circleMenu[]): number {
+    let length = arr.length;
+    if (length <= 0) {
+        return 0
+    } else if (length === 1 || length === 2) {
+        return length
+    } else {
+        return Math.ceil((length - 2) / 2) + 2
+    }
 }
 
 function RouterCircle(props: Props) {
     let circleTitleNum = circleTitleClassName(props.circleMenuProps);
-    smallCircle(props.circleMenuProps)
+    let rowNum = smallCircle(props.circleMenuProps);
     const circleTitle = props.circleMenuProps.map(el => <span
         key={el.id}
         className={circleTitleNum + ' circle-small-item'}
-    >{el.title}</span>)
+    >{el.title}</span>);
     return <div className='router-circle'>
         <div className='small-circle-gp'>
             {circleTitle}
