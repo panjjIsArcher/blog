@@ -14,10 +14,12 @@
   flex-wrap: nowrap;
   align-items: center;
   border-bottom: 1px solid @bg-bottom-color;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.3);
 
   > div {
     color: #b9c8e0;
-    width: 110px;
+    align-items: center;
+    display: flex;
 
     &:hover {
       color: #fff;
@@ -48,6 +50,24 @@
         color: #b9c8e0;
 
       }
+    }
+  }
+
+  > div:first-child {
+    width: 25%;
+
+    > div {
+      width: 20%;
+      margin-right: 20px;
+    }
+  }
+
+  > div:last-child {
+    width: 75%;
+    padding-left: 50px;
+
+    .logo {
+      width: 25px;
     }
   }
 

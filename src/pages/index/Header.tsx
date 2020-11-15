@@ -28,30 +28,40 @@ const changeLang: (command: string | undefined, instance?: any) => void = (comma
 
 
 function Header(props: Props) {
+    let logo = require('../../assets/img/fire.png')
     return (
         <div className='header'>
             <div>
-                <Link to="/me" className='router-link'>about me</Link>
+                <div>
+                    <Link to="/me" className='router-link'>about me</Link>
+                </div>
+                {/*下拉菜单*/}
+                <div>
+                    <Dropdown
+                        onCommand={changeQuickStartMenu}
+                        menuAlign='start'
+                        menu={(<Dropdown.Menu>
+                            {menuOne}
+                        </Dropdown.Menu>)}>
+                        <div className="el-dropdown-link fast-start">快速开始</div>
+                    </Dropdown>
+                </div>
+                <div>
+                    <Dropdown
+                        onCommand={changeLang}
+                        menuAlign="start"
+                        menu={(<Dropdown.Menu>{menuTow}</Dropdown.Menu>)}
+                    >
+                        <div className="el-dropdown-link fast-start">切换语言</div>
+                    </Dropdown>
+                </div>
             </div>
-            {/*下拉菜单*/}
             <div>
-                <Dropdown
-                    onCommand={changeQuickStartMenu}
-                    menuAlign='start'
-                    menu={(<Dropdown.Menu>
-                        {menuOne}
-                    </Dropdown.Menu>)}>
-                    <div className="el-dropdown-link fast-start">快速开始</div>
-                </Dropdown>
-            </div>
-            <div>
-                <Dropdown
-                    onCommand={changeLang}
-                    menuAlign="start"
-                    menu={(<Dropdown.Menu>{menuTow}</Dropdown.Menu>)}
-                >
-                    <div className="el-dropdown-link fast-start">切换语言</div>
-                </Dropdown>
+                <div>
+                    <Link to="/">
+                        <img src={logo} className="logo" alt='logo'/>
+                    </Link>
+                </div>
             </div>
         </div>
     )
