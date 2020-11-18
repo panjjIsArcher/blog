@@ -37,7 +37,6 @@ function smallCircle(arr: circleMenu[]): number {
 
 function RouterCircle(props: Props) {
     let circleTitleNum = circleTitleClassName(props.circleMenuProps);
-    let rowNum = smallCircle(props.circleMenuProps);
     const circleTitle = props.circleMenuProps.map(el => <span
         key={el.id}
         className={circleTitleNum + ' circle-small-item'}

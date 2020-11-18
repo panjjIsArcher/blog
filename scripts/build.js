@@ -42,7 +42,6 @@ const isInteractive = process.stdout.isTTY;
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
   process.exit(1);
 }
-
 // Generate configuration
 const config = configFactory('production');
 

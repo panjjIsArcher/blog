@@ -27,7 +27,6 @@
     "dotenv-expand": "5.1.0",
     "element-react": "^1.4.34",
     "element-theme-default": "^1.4.13",
-    "eslint": "^6.6.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-loader": "3.0.3",
     "eslint-plugin-flowtype": "4.6.0",
@@ -147,5 +146,9 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "element-theme-chalk": "^2.14.1",
+    "eslint": "^6.8.0"
   }
 }

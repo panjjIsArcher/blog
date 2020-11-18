@@ -10,7 +10,7 @@ interface Prop {
 function UserCard(prop: Prop) {
     const headerDefault = require('../../assets/img/header-default.jpg');
     const MenuSubMenu = UserMenu.map((el, ind) => {
-        const child = el.child.map((e,i) =>
+        const child = el.child.map((e, i) =>
             <Menu.Item index={`${el.id}-${e.id}`} key={e.id}>
                 <i className={e.icon}/>
                 {e.title}
@@ -32,7 +32,7 @@ function UserCard(prop: Prop) {
             {/*中部card*/}
             <div className='header-info'>
                 <div>
-                    <Menu uniqueOpened={true}>
+                    <Menu uniqueOpened={true} className='el-menu-react'>
                         {MenuSubMenu}
                     </Menu>
                 </div>
