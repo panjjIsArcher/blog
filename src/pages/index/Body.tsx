@@ -15,7 +15,6 @@ const circleMenu: circleMenuProps[] = [
 ]
 
 function Body() {
-
     return <div className='index-body'>
         <RouterCircle circleMenuProps={circleMenu}/>
     </div>

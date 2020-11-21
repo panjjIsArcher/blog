@@ -2,7 +2,8 @@ import React from "react";
 import "@/assets/css/index/index.less";
 import {Dropdown} from 'element-react';
 import {quickStartMenu, lang} from "./menu";
-import {Link} from "react-router-dom"
+
+const {Link} = require('react-router-dom')
 
 export interface Props {
     username?: string
@@ -20,7 +21,7 @@ const menuTow = lang.map((el, index) => {
 });
 
 const changeQuickStartMenu: (command?: string | undefined, instance?: any) => void = (command, instance): void => {
-    console.log(command, instance)
+    console.log(command, instance);
 }
 const changeLang: (command: string | undefined, instance?: any) => void = (command, instance): void => {
 
@@ -28,7 +29,7 @@ const changeLang: (command: string | undefined, instance?: any) => void = (comma
 
 
 function Header(props: Props) {
-    let logo = require('../../assets/img/fire.png')
+    let logo = require('../../assets/img/fire.png');
     return (
         <div className='header'>
             <div>

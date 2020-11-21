@@ -3982,6 +3982,11 @@ element-react@^1.4.34:
     react-transition-group "^2.5.3"
     throttle-debounce "^2.1.0"
 
+element-theme-chalk@^2.14.1:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/element-theme-chalk/-/element-theme-chalk-2.14.1.tgz#a6c1ba1874f5bf3d82358c6b1ebca6cad17f2650"
+  integrity sha512-LvXZJF8z9Ko0yNxwPs5tnhv8DzF+xuZse0oLuSXAGB4rQmArkrcJkGoKokq2YbwqrMLYebV9M2FSa2e18FU9Nw==
+
 element-theme-default@^1.4.13:
   version "1.4.13"
   resolved "https://registry.yarnpkg.com/element-theme-default/-/element-theme-default-1.4.13.tgz#70f9b754f9a1059d20c3225fe12eb55cc1e8abf9"

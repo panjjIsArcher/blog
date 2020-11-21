@@ -24,16 +24,6 @@ function circleTitleClassName(arr: circleMenu[]): string {
 
 }
 
-function smallCircle(arr: circleMenu[]): number {
-    let length = arr.length;
-    if (length <= 0) {
-        return 0
-    } else if (length === 1 || length === 2) {
-        return length
-    } else {
-        return Math.ceil((length - 2) / 2) + 2
-    }
-}
 
 function RouterCircle(props: Props) {
     let circleTitleNum = circleTitleClassName(props.circleMenuProps);
