@@ -1,0 +1,36 @@
+
+.swiper{
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-height: 500px;
+  .swiper-content{
+    max-width: 1200px;
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .swiper-item{
+      position: relative;
+      margin: 0 10px;
+      width: 300px;
+      height: 450px;
+      background-color: #fff;
+      overflow: hidden;
+      border-radius: 10px;
+      .swiper-item-bottom{
+        position: absolute;
+        bottom: -30%;
+        background-color: #000;
+        height: 30%;
+        width: 100%;
+        filter:Alpha(Opacity=60);
+        opacity:0.6
+      }
+    }
+  }
+
+}

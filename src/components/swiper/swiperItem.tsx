@@ -1,20 +1,34 @@
 import React from "react";
+import "@/assets/css/swiper/swiper.less";
+import "@/assets/css/animation/animation.less";
+import { zIndexCount } from "../../assets/js/swiper";
 
-interface Prop {
-    item?: Item
+interface Prop{
+    children?:any,
+    index: number,
+    swiperItemNum: number
 }
 
-interface Item {
-    title: string,
-    id: string | number
-}
-
-function SwiperItem(props: Prop) {
-    let {item: Item} = props;
+function SwiperItem(prop:Prop){
+    let { swiperItemNum ,index } = prop;
+    let swiper_item_bottom = 'swiper-item-bottom'
+    const showBottom = () => {
+        swiper_item_bottom = 'swiper-item-bottom animation-bottom'
+    }
+    console.log(prop.children)
+    const detail = prop.children?prop.children: (
+        <div>
+            <div>
+                {prop.index}
+            </div>
+            <div className={ swiper_item_bottom }>
+                默认
+            </div>
+        </div>);
     return <div>
-       {/*卧槽，还能这么写*/}
-        {props.item?.title}
+        <div className='swiper-item' onMouseEnter={showBottom} style={{ zIndex: zIndexCount(swiperItemNum,index) }}>
+        { detail }
+        </div>
     </div>
 }
-
-export default SwiperItem;
+export default SwiperItem

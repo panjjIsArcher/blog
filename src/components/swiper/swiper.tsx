@@ -1,33 +1,14 @@
-import React, {useRef, useState} from "react";
+import React from "react";
 import SwiperItem from "./swiperItem";
-import Swiper from "react-id-swiper";
-import {frontSwiperItem} from "../../mock/front"
+import "@/assets/css/swiper/swiper.less"
+import {swiper} from "../../mock/swiper";
 
-function MySwiper() {
-    const [swiper, setSwiper] = useState(null);
-    const ref = useRef(null);
-    const goNext = () => {
-        if (ref && ref.current !== null && swiper) {
-            // swiper.slideNext();
-        }
-    };
-    const goPrev = () => {
-        if (ref && ref.current !== null && swiper) {
-            // swiper.slidePrev();
-        }
-    };
-    const swi = frontSwiperItem.map(el => {
-        return <div className='swiper-div' key={el.id}>
-            <SwiperItem item={el}/>
+function Swiper(){
+    return <div className='swiper'>
+        <div className='swiper-content'>
+            {swiper.map((el,index,array)=> <SwiperItem index={index} key={el.label} swiperItemNum={array.length}></SwiperItem>)}
         </div>
-    })
-    return <div className='my-swiper'>
-        <Swiper ref={ref}>
-            {swi}
-        </Swiper>
-        <button onClick={goPrev}>Prev</button>
-        <button onClick={goNext}>Next</button>
     </div>
 }
 
-export default MySwiper;
+export default Swiper;

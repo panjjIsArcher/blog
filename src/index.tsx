@@ -4,7 +4,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import "./assets/css/common.less"
 import 'element-theme-default'
-import "swiper/swiper.less"
 
 ReactDOM.render(
     <App/>,

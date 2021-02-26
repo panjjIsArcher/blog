@@ -1,6 +1,6 @@
 import React from "react"
-import RouterCircle from "../../components/Router/routerCircle";
 import "@/assets/css/index/index.less"
+import Swiper from  "../../components/swiper/swiper"
 
 interface circleMenuProps {
     title: string,
@@ -16,7 +16,7 @@ const circleMenu: circleMenuProps[] = [
 
 function Body() {
     return <div className='index-body'>
-        <RouterCircle circleMenuProps={circleMenu}/>
+       <Swiper/>
     </div>
 }
 

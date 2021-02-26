@@ -1,6 +1,7 @@
 interface SwiperItem {
     title: string,
-    id: number | string
+    id: number | string,
+    sort?: number | undefined
 }
 
 const frontSwiperItem: SwiperItem[] = [
