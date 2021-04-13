@@ -13,20 +13,19 @@ function SwiperItem(prop:Prop){
     let { swiperItemNum ,index } = prop;
     let swiper_item_bottom = 'swiper-item-bottom'
     const showBottom = () => {
-        swiper_item_bottom = 'swiper-item-bottom animation-bottom'
+        swiper_item_bottom = `${swiper_item_bottom} animation-bottom`
     }
-    console.log(prop.children)
     const detail = prop.children?prop.children: (
-        <div>
+        <div>  
             <div>
-                {prop.index}
+                { prop.index }
             </div>
-            <div className={ swiper_item_bottom }>
+            <div className='swiper-item-bottom animation-bottom'>
                 默认
             </div>
         </div>);
     return <div>
-        <div className='swiper-item' onMouseEnter={showBottom} style={{ zIndex: zIndexCount(swiperItemNum,index) }}>
+        <div className='swiper-item' onMouseEnter={showBottom} style={{ zIndex: zIndexCount( swiperItemNum,index ) }}>
         { detail }
         </div>
     </div>

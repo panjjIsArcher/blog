@@ -14,22 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc156a53-9790-4751-8551-8cd1dc507377" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/css/swiper/swiper.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/swiper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mock/swiper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/css/ariticleList/ariticle-list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ariticleList/ariticleList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/npm-shrinkwrap.json" beforeDir="false" afterPath="$PROJECT_DIR$/npm-shrinkwrap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/animation/animation.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/animation/animation.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/common.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/common.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/index/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/swiper/swiper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/swiper/swiper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/front/front.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/front/front.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/swiper/swiper.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/swiper/swiper.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/swiper/swiperItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/swiper/swiperItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mock/front.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mock/front.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/Body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/Body.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mock/swiper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mock/swiper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/front/front.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/front/front.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,14 +33,11 @@
       <list>
         <option value="CSS File" />
         <option value="tsconfig.json" />
-        <option value="Less File" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="Less File" />
       </list>
     </option>
-  </component>
-  <component name="Git.Pull.Settings">
-    <option name="BRANCH" value="dev" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -201,7 +190,8 @@
       <workItem from="1612961186286" duration="1914000" />
       <workItem from="1613014324403" duration="4388000" />
       <workItem from="1613613907947" duration="7015000" />
-      <workItem from="1613959394030" duration="9190000" />
+      <workItem from="1613959394030" duration="14489000" />
+      <workItem from="1618213526938" duration="5025000" />
     </task>
     <task id="LOCAL-00001" summary="连接远程仓库">
       <created>1605003111822</created>
@@ -231,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605925783161</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="front页面新增swiper展示">
+      <created>1614334576343</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614334576343</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
