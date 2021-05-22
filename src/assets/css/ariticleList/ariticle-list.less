@@ -1,12 +1,25 @@
-.ariticle-list{
+.ariticle-list {
   // padding: 10px ;
   display: flex;
   min-height: 400px;
   max-height: 50%;
-  >div:first-child{
+
+  > div:first-child {
     width: 35%;
+
+    .menu {
+      height: 100%;
+      overflow-y: auto;
+    }
   }
-  >div:last-child{
+
+  > div:last-child {
     width: 65%;
+
+    .content {
+      background-color: #fff;
+      height: 100%;
+      overflow-y: auto;
+    }
   }
 }

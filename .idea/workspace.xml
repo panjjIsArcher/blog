@@ -14,14 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc156a53-9790-4751-8551-8cd1dc507377" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/css/ariticleList/ariticle-list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ariticleList/ariticleList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/front/frontJS.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/front/front.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/front/front.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/swiper/swiper.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/swiper/swiper.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/swiper/swiperItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/swiper/swiperItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mock/swiper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mock/swiper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/front/front.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/front/front.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/ariticleList/ariticle-list.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/ariticleList/ariticle-list.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ariticleList/ariticleList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ariticleList/ariticleList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +30,8 @@
         <option value="CSS File" />
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="Less File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -191,7 +187,13 @@
       <workItem from="1613014324403" duration="4388000" />
       <workItem from="1613613907947" duration="7015000" />
       <workItem from="1613959394030" duration="14489000" />
-      <workItem from="1618213526938" duration="5025000" />
+      <workItem from="1618213526938" duration="5126000" />
+      <workItem from="1618320320575" duration="234000" />
+      <workItem from="1619706346825" duration="2532000" />
+      <workItem from="1619747670698" duration="6000" />
+      <workItem from="1619807220851" duration="1811000" />
+      <workItem from="1619845564700" duration="619000" />
+      <workItem from="1621602860266" duration="1894000" />
     </task>
     <task id="LOCAL-00001" summary="连接远程仓库">
       <created>1605003111822</created>
@@ -228,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614334576343</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="front页面新增swiper展示">
+      <created>1618280194928</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618280194931</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
