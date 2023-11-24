@@ -1,5 +1,5 @@
 
-import "@/public/style/universal.scss"; // universal style
+import "@/public/style/universal.module.scss"; // universal style
 
 export default function Home() {
   return (
