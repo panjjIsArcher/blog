@@ -1,0 +1,30 @@
+// the width of the design page is 1920px
+
+// now we give several breakpoints to make the page could be responsive 
+
+// 'sm': '640px',
+// // => @media (min-width: 640px) { ... }
+
+// 'md': '768px',
+// // => @media (min-width: 768px) { ... }
+
+// 'lg': '1024px',
+// // => @media (min-width: 1024px) { ... }
+
+// 'xl': '1280px',
+// // => @media (min-width: 1280px) { ... }
+
+$sm-device:640px; // mobile-phone
+$md-device:768px; // pad
+$lg-device:1024px; // personal computer
+$xl-device:1280px; // desktop
+
+@media screen and (max-width:$sm-device) {}
+
+@media screen and (min-width: $sm-device) and (max-width:$md-device) {}
+
+@media screen and (min-width:$md-device) and (max-width:$lg-device) {}
+
+@media screen and (min-width:$lg-device) and (max-width:$xl-device) {}
+
+@media screen and (min-width:$xl-device) {}
