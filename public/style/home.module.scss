@@ -3,7 +3,7 @@
     width: 100vw;
     height: 100vh;
     text-align: center;
-    
+
     >.main-title,
     >.sub-title {
         margin: 0;
@@ -17,6 +17,11 @@
         font-family: system-ui;
         font-weight: 400;
         user-select: none;
+        animation-name: tracking-in-expand-fwd-bottom;
+        animation-duration: 2s;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        animation-fill-mode: both;
+        animation-delay: 0.5s;
     }
 
     >.btn {
@@ -48,5 +53,23 @@
         color: #EFEFEF;
         font-size: 1.875rem;
         line-height: 1.875rem;
+        animation-delay: 1.5s;
+    }
+}
+
+@keyframes tracking-in-expand-fwd-bottom {
+    0% {
+      
+        transform:  translateY(100px) translateX(-50%);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform:  translateY(0) translateX(-50%);
+        opacity: 1;
     }
 }
