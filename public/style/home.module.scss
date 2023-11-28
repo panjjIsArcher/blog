@@ -1,5 +1,52 @@
 .bg {
-    background-image: url("../image/introduction.jpg");
+    background-image: url("../image/introduction.png");
     width: 100vw;
     height: 100vh;
+    text-align: center;
+    
+    >.main-title,
+    >.sub-title {
+        margin: 0;
+        color: #FFF;
+        position: absolute;
+        font-style: normal;
+        transform: translate(-50%, 0);
+        left: 50%;
+        width: 100%;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: system-ui;
+        font-weight: 400;
+        user-select: none;
+    }
+
+    >.btn {
+        position: absolute;
+        border-radius: 0.39063rem;
+        border: 5px solid rgba(0, 0, 0, 0.50);
+        background-color: rgba(169, 156, 173, 0.75);
+        bottom: 15.1rem;
+        transform: translate(-50%, 0);
+        left: 50%;
+        padding: 1.15rem 1.46rem 1.15rem 1.51rem;
+        color: #FFF;
+        font-size: 1.66667rem;
+        line-height: 1.66667rem;
+        font-family: system-ui;
+        font-style: italic;
+        cursor: pointer;
+    }
+
+    >.main-title {
+        font-size: 7.70833rem;
+        line-height: 7.70833rem;
+        top: 19.53rem;
+
+    }
+
+    >.sub-title {
+        top: 18.39rem;
+        color: #EFEFEF;
+        font-size: 1.875rem;
+        line-height: 1.875rem;
+    }
 }
