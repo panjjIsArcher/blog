@@ -1,0 +1,19 @@
+// the width of the design page is 1920px
+
+// now we give several breakpoints to make the page could be responsive 
+
+$sm-device:640px; // mobile-phone
+$md-device:768px; // pad
+$lg-device:1024px; // personal computer
+$xl-device:1280px; // desktop
+
+$browser-default-font-size :19.2px;
+
+:export {
+    $sm-device: $sm-device;
+    $md-device: $md-device;
+    $lg-device: $lg-device;
+    $xl-device: $xl-device;
+
+    $browser-default-font-size:$browser-default-font-size;
+}
