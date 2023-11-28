@@ -3,7 +3,8 @@ export const reCalc = (designWidth, maxWidth) => {
   let win = window;
   let docEl = doc.documentElement;
   let tid;
-  let rootItem, rootStyle;
+  let rootItem;
+  let rootStyle;
 
   function refreshRem() {
     let width = docEl.getBoundingClientRect().width;
@@ -34,6 +35,7 @@ export const reCalc = (designWidth, maxWidth) => {
     }
     //兼容UC结束
     docEl.style.fontSize = rem + "px";
+    console.log(`1rem=${rem}px`)
   }
   refreshRem();
 
