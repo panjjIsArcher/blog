@@ -1,9 +1,7 @@
 @import "./various.scss";
 
 .bg {
-    // background-image: url("../image/introduction.png");
-    width: 100vw;
-    height: 100vh;
+    
     text-align: center;
     
     >.img {
@@ -32,16 +30,15 @@
 
     >.btn {
         position: absolute;
-        border-radius: 0.39063vw;
+       
         border: 5px solid rgba(0, 0, 0, 0.50);
         background-color: rgba(169, 156, 173, 0.75);
-        bottom: 15.1vw;
+       
         transform: translate(-50%, 0);
         left: 50%;
-        padding: 1.15vw 1.46vw 1.15vw 1.51vw;
+        
         color: #FFF;
-        font-size: 1.66667vw;
-        line-height: 1.66667vw;
+        
         font-family: system-ui;
         font-style: italic;
         cursor: pointer;
@@ -52,17 +49,15 @@
     }
 
     >.main-title {
-        font-size: 7.70833vw;
-        line-height: 7.70833vw;
-        top: 19.53vw;
+    
+    
 
     }
 
     >.sub-title {
-        top: 18.39vw;
+      
         color: #EFEFEF;
-        // font-size: 1.875vw;
-        // line-height: 1.875vw;
+       
         animation-delay: 1.5s;
     }
 }
