@@ -28,6 +28,7 @@ export default function Home() {
     if (el) {
       el.removeEventListener("animationend", hasLeft)
     }
+   
     isBgImgLoaded("#home-container").then(isLoad => {
       setIsLoad(isLoad)
     })
