@@ -18,7 +18,9 @@ export const isBgImgLoaded = (mark: string) => {
     const img: HTMLImageElement = new Image();
     img.src = first;
     img.onload = () => {
-
+        new Promise((resolve, reject) => {
+            resolve(true)
+        })
     }
 
 }
