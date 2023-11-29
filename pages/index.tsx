@@ -9,24 +9,30 @@ export default function Home() {
   const [leaving, setLeaving] = useState(false)
   const container = useRef(null)
   const router = useRouter()
+  // const [pathname, setPathName] = useState(router.pathname)
+
+
   const startLeave = () => {
+    const el: any = container.current
+    if (el && !el.hasAttribute("animationend")) {
+      el.addEventListener("animationend", hasLeft, false)
+    }
     setLeaving(true)
   }
-
-  const jump = () => {
+  const hasLeft = () => {
     router.push("/introduction")
   }
 
   useEffect(() => {
-    const el:any = container.current
+    const el: any = container.current
     if (el) {
-      el.addEventListener("animationEnd", jump, false)
+      el.removeEventListener("animationend", hasLeft)
     }
-
     isBgImgLoaded("#home-container").then(isLoad => {
       setIsLoad(isLoad)
     })
   })
+  
 
   return (
     <div className={`${homeStyle.bg} ${leaving ? homeStyle.leave : ""}  bg-universal`} id="home-container" ref={container} >

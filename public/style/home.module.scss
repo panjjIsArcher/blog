@@ -49,6 +49,7 @@ $animation-delay:1s;
             animation-name: tracking-in-expand-fwd-bottom, jello-horizontal;
             animation-duration: 0s, 0.9s;
             animation-delay: 0s, 0s;
+            
         }
     }
 
@@ -80,6 +81,7 @@ $animation-delay:1s;
     animation-duration: 1s;
     animation-delay:$animation-delay/5 + 1s;
     animation-name: move-left;
+    animation-fill-mode: forwards; // 关键代码 动画结束后 停留在最后一帧
 
 }
 
