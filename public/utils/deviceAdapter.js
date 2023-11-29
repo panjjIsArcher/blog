@@ -1,4 +1,4 @@
-export const reCalc = (designWidth, maxWidth) => {
+export const reCalc = (designWidth = 1920, maxWidth = 1920) => {
   let doc = document;
   let win = window;
   let docEl = doc.documentElement;

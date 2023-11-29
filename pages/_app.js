@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
     // 1rem = 100px
-    reCalc(375, 375);
+    reCalc(1920, 1920);
   }, [])
   return <Component {...pageProps} />;
 }
