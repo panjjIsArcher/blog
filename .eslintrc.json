@@ -5,7 +5,8 @@
     "quotes": ["error", "double"],
     "no-dupe-args": "error",
     "no-var": "error",
-    "no-console": "error"
+    "no-console": "error",
+    "react/self-closing-comp": "error"
   },
   "parser": "babel-eslint",
   "env": {
