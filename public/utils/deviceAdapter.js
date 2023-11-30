@@ -35,7 +35,7 @@ export const reCalc = (designWidth = 1920, maxWidth = 1920) => {
     }
     //兼容UC结束
     docEl.style.fontSize = rem + "px";
-    console.log(`1rem=${rem}px`)
+    // console.log(`1rem=${rem}px`);
   }
   refreshRem();
 
@@ -71,4 +71,13 @@ export const reCalc = (designWidth = 1920, maxWidth = 1920) => {
       false
     );
   }
+};
+
+export const intersectionObserver = (
+  dom,
+  callback = (entries) => {},
+  options = {}
+) => {
+  const io = new IntersectionObserver(callback, options);
+  io.observe(dom);
 };
