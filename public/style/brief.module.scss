@@ -7,5 +7,6 @@
     }
     >.right{
         background-image: url("~@/public/image/home-bg.jpg");
+        clip-path: polygon(35% 0, 100% 0%, 100% 100%, 65% 100%);
     }
 }
