@@ -19,7 +19,8 @@ export default function Home() {
     }
     setLeaving(true)
   }
-  const hasLeft = () => {
+  const hasLeft = async () => {
+    await new Promise(resolve => setTimeout(resolve, 2.5 * 1000))
     router.push("/introduction")
   }
 
@@ -28,12 +29,12 @@ export default function Home() {
     if (el) {
       el.removeEventListener("animationend", hasLeft)
     }
-   
+
     isBgImgLoaded("#home-container").then(isLoad => {
       setIsLoad(isLoad)
     })
   })
-  
+
 
   return (
     <div className={`${homeStyle.bg} ${leaving ? homeStyle.leave : ""}  bg-universal`} id="home-container" ref={container} >
