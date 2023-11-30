@@ -27,22 +27,16 @@ $delay:1s;
     overflow-y: overlay;
 
     // 滚动条样式
-    &::-webkit-scrollbar {
+    &::-webkit-scrollbar,&::-webkit-scrollbar-track {
         width: 5px;
         height: 100%;
-        background-color: rgba($color: #fff, $alpha: 0.1);
-    }
-
-    &::-webkit-scrollbar-track {
-        width: 5px;
-        height: 100%;
-        background-color: rgba($color: #fff, $alpha: 0.1);
+        background-color: rgba(#fff, 0.1);
     }
 
     &::-webkit-scrollbar-thumb {
         height: auto;
         width: 5px;
-        background-color: rgba($color: #333, $alpha: 0.2);
+        background-color: rgba(#333, 0.2);
         border-radius: 3px;
     }
 }
