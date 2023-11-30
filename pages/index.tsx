@@ -20,7 +20,7 @@ export default function Home() {
     setLeaving(true)
   }
   const hasLeft = async () => {
-    await new Promise(resolve => setTimeout(resolve, 2.5 * 1000))
+    await new Promise(resolve => setTimeout(resolve, 2 * 1000))
     router.push("/introduction")
   }
 
