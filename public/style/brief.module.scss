@@ -1,9 +1,26 @@
 .brief{
     height: 100%;
+    position: relative;
     >.left,>.right{
         background-repeat: no-repeat;
         background-size: 100% 100%;
         height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    >.left{
+        background-color: pink;
+        >.menu{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            height: inherit;
+            >li{
+                font-size: 30px;
+                color: #fff;
+            }
+        }
     }
     >.right{
         background-image: url("~@/public/image/home-bg.jpg");
