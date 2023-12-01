@@ -1,5 +1,4 @@
 import briefStyle from "@/public/style/brief.module.scss";
-import { useEffect, useState } from "react";
 
 const list = [
     {

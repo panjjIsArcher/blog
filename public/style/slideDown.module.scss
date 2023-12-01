@@ -1,0 +1,76 @@
+.container {
+    background-image: url("~@/public/image/build.jpg");
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    $deg: 100deg;
+
+    >.text {
+        color: #fff;
+        margin: auto;
+        font-size: 120px;
+        transition-property: opacity;
+        opacity: 0;
+        transition-duration: 1s;
+        font-family: system-ui;
+        text-transform: uppercase;
+    }
+
+    >.slide {
+        height: inherit;
+        width: inherit;
+        position: absolute;
+        filter: drop-shadow(14px 14px 20px rgba(#000, 0.5));
+        opacity: .475;
+        transition: 1s;
+        overflow: hidden;
+        background-color: rgba(#fff, 0.15);
+    }
+
+    >.slide-left-1 {
+        left: -35%;
+        transform: rotateZ($deg);
+    }
+
+    >.slide-left-2 {
+        left: -35%;
+        transform: rotateZ(-$deg);
+    }
+
+    >.slide-right-1 {
+        right: -35%;
+        transform: rotateZ($deg);
+    }
+
+    >.slide-right-2 {
+        right: -35%;
+        transform: rotateZ(-$deg);
+    }
+
+    &:hover {
+
+        >.slide-left-2,
+        >.slide-left-1 {
+            left: -45%;
+            opacity: 0.2;
+
+        }
+
+        >.slide-right-1,
+        >.slide-right-2 {
+            right: -45%;
+            opacity: 0.2;
+
+        }
+
+        >.text {
+            opacity: 1;
+        }
+
+    }
+}
