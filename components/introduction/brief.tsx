@@ -1,4 +1,5 @@
 import briefStyle from "@/public/style/brief.module.scss";
+import { useState } from "react";
 
 const list = [
     {
@@ -17,12 +18,20 @@ const list = [
 
 export default function Brief() {
 
+    const [index,setIndex] =useState(0)
+
+    const changeIndex = (e) =>{
+        console.log(e.target)
+        setIndex(index)
+    }
+
     const ul = list.map((li, index, arr) => {
         const length = arr.length;
-        const gap = 65 - 10 * index;
-        return (<li key={li.name} id={li.name} >
-            <span className={briefStyle.title}> {li.name}</span>
-            <style jsx>{`li{height:${100 / length}%;width:${100}%}`} </style>
+        const gap = 25 - 5 * index;
+        return (<li key={li.name} id={li.name} onMouseEnter={changeIndex} value={index}>
+            <h5 className={briefStyle.title}> {li.name}</h5>
+            <style jsx>{`h5{left:${gap}%}}`}</style>
+            <style jsx>{`li{height:${100 / length}%;`} </style>
             <span className={briefStyle.block} />
         </li>)
     })
