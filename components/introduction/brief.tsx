@@ -21,6 +21,7 @@ export default function Brief() {
         const length = arr.length;
         return (<li key={li.name} id={li.name} >{li.name}
             <style jsx>{`li{height:${100 / length}%;}`} </style>
+            <span className={briefStyle.block} />
         </li>)
     })
 
