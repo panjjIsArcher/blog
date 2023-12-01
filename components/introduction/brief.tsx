@@ -8,7 +8,7 @@ const list = [
         name: "skill stack"
     },
     {
-        name:"projects"
+        name: "projects"
     },
     {
         name: "connect me"
@@ -19,8 +19,10 @@ export default function Brief() {
 
     const ul = list.map((li, index, arr) => {
         const length = arr.length;
-        return (<li key={li.name} id={li.name} >{li.name}
-            <style jsx>{`li{height:${100 / length}%;}`} </style>
+        const gap = 65 - 10 * index;
+        return (<li key={li.name} id={li.name} >
+            <span className={briefStyle.title}> {li.name}</span>
+            <style jsx>{`li{height:${100 / length}%;width:${100}%}`} </style>
             <span className={briefStyle.block} />
         </li>)
     })
