@@ -9,8 +9,6 @@ export default function Home() {
   const [leaving, setLeaving] = useState(false)
   const container = useRef(null)
   const router = useRouter()
-  // const [pathname, setPathName] = useState(router.pathname)
-
 
   const startLeave = () => {
     const el: any = container.current
@@ -20,7 +18,7 @@ export default function Home() {
     setLeaving(true)
   }
   const hasLeft = async () => {
-    await new Promise(resolve => setTimeout(resolve, 2 * 1000))
+    await new Promise(resolve => setTimeout(resolve, 1.25 * 1000))
     router.push("/introduction")
   }
 

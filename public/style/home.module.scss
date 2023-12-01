@@ -78,7 +78,7 @@ $animation-delay:1s;
     transition-property: transform;
     transition-delay: $animation-delay/5;
     
-    animation-duration: 1s;
+    animation-duration: $animation-delay/2;
     animation-delay:$animation-delay/5 + 1s;
     animation-name: move-left;
     animation-fill-mode: forwards; // 关键代码 动画结束后 停留在最后一帧
