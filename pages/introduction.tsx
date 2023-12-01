@@ -1,7 +1,8 @@
 import Footer from "@/components/layout/footer"
 import Brief from "@/components/introduction/brief";
 import introStyle from "@/public/style/introduction.module.scss";
-import { useEffect,  useState } from "react";
+import SlideDown from "@/components/introduction/slideDown"
+import { useEffect, useState } from "react";
 
 export default function Introduction() {
     const [startLoad, setStartLoad] = useState(false)
@@ -19,9 +20,11 @@ export default function Introduction() {
     return <div className={`${introStyle.container}  ${startScroll ? introStyle["enable-scroll"] : ""}`}>
         <div className={`${startLoad ? introStyle.animation : ""} ${introStyle.content}`} >
             <section className={introStyle.section}>
+                <SlideDown />
+            </section>
+            <section className={introStyle.section}>
                 <Brief />
             </section>
-            <section className={introStyle.section}>板块2</section>
             <section className={introStyle.section} >
                 <Footer />
             </section>

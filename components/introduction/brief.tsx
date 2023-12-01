@@ -1,4 +1,5 @@
 import briefStyle from "@/public/style/brief.module.scss";
+import { useEffect } from "react";
 
 const list = [
     {
@@ -13,10 +14,15 @@ const list = [
 
 
 export default function Brief() {
+
     const ul = list.map((li, index, arr) => {
         const length = arr.length;
         const height = `${100 / length}%;`
-        return <li key={li.name} style={{height}}>{li.name}</li>
+        return <li key={li.name} style={{ height }} id={li.name}>{li.name}</li>
+    })
+
+    useEffect(() => {
+
     })
 
     return <div className={briefStyle.brief}>
