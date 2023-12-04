@@ -7,16 +7,19 @@ $animation-delay:1s;
     width: 100%;
     height: 100vh;
 
-    >.glass{
+    >.glass {
         --filter-value: 20px;
         width: 50%;
         height: 100%;
         filter: blur(var(--filter-value));
         backdrop-filter: blur(var(--filter-value));
+        box-shadow: 15px 0 20px 2px rgba(136, 105, 76, 0.31);
+        transition-duration: 0.5s;
+        background-color: rgba(136, 105, 76, 0.2);
     }
 
     >.animation-universal {
-        animation-duration: 2s;
+        animation-duration: $animation-delay*2;
         animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
         animation-fill-mode: both;
     }
@@ -35,12 +38,13 @@ $animation-delay:1s;
         font-weight: 400;
         user-select: none;
         display: none;
+        mix-blend-mode: overlay;
     }
 
     >.btn {
         position: absolute;
-        border: 5px solid rgba(0, 0, 0, 0.50);
-        background-color: rgba(169, 156, 173, 0.75);
+        border: 3px solid rgba(0, 0, 0, 0.350);
+        background-color: rgba(169, 156, 173, 0.751);
         transform: translate(-50%, 0);
         left: 50%;
         color: #FFF;
@@ -50,44 +54,72 @@ $animation-delay:1s;
         font-size: 0.32rem;
         bottom: 2.9rem;
         padding: 0.22rem 0.29rem;
-        animation-delay: $animation-delay + 2s;
+        animation-delay: $animation-delay + $animation-delay * 2;
         display: none;
+        border-radius: calc(0.22rem * 2 + 0.32rem);
+        
 
         &:hover {
             animation-name: tracking-in-expand-fwd-bottom, jello-horizontal;
             animation-duration: 0s, 0.9s;
             animation-delay: 0s, 0s;
+
             
+
         }
     }
 
     >.main-title {
         font-size: 1.48rem;
-        top: 3.75rem;
+        top: 3.5rem;
         animation-delay: $animation-delay;
     }
 
     >.sub-title {
-        font-size: 0.36rem;
+        --size: 0.48rem;
+        font-size: var(--size);
         color: #EFEFEF;
         animation-delay: $animation-delay + 1s;
-        top: 3.53rem;
+        opacity: 0;
+        width: 50%;
+        padding-left: 5%;
+        left: 25%;
+        text-align: left;
+        top: 10%;
+        text-indent: calc(var(--size) * 2);
+    }
+
+    >.btn-title-animation,
+    >.sub-title-animation,
+    >.title-animation {
+        display: block;
     }
 
     >.title-animation {
         animation-name: tracking-in-expand-fwd-bottom;
-        display: block;
+    }
+
+    >.btn-title-animation {
+        animation-name: tracking-in-expand-fwd-bottom;
+    }
+
+    >.sub-title-animation {
+        animation-name: opacity-hide;
+        animation-duration: $animation-delay * 2;
+        animation-delay: $animation-delay * 4;
+        animation-fill-mode: forwards;
+
     }
 }
 
-.leave{
+.leave {
     transform: scale(0.75) translateX(0);
     transition-duration: 1s;
     transition-property: transform;
     transition-delay: $animation-delay/5;
-    
+
     animation-duration: $animation-delay/2;
-    animation-delay:$animation-delay/5 + 1s;
+    animation-delay: $animation-delay/5 + 1s;
     animation-name: move-left;
     animation-fill-mode: forwards; // 关键代码 动画结束后 停留在最后一帧
 
@@ -148,12 +180,23 @@ $animation-delay:1s;
 }
 
 @keyframes move-left {
-    0%{
+    0% {
         transform: scale(0.75) translateX(0);
         display: block;
     }
-    100%{
+
+    100% {
         transform: scale(0.75) translateX(-125%);
         display: none;
+    }
+}
+
+@keyframes opacity-hide {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
