@@ -36,6 +36,7 @@ export default function Home() {
 
   return (
     <div className={`${homeStyle.bg} ${leaving ? homeStyle.leave : ""}  bg-universal`} id="home-container" ref={container} >
+      <div className={homeStyle.glass} />
       <h6 className={`${homeStyle["animation-universal"]} ${homeStyle["sub-title"]}  ${isLoad ? homeStyle["title-animation"] : ""}`}>It is what we do that defines us  </h6>
       <h1 className={`${homeStyle["animation-universal"]} ${homeStyle["main-title"]}  ${isLoad ? homeStyle["title-animation"] : ""}`}>Dowson’s Blog</h1>
       <span className={`${homeStyle["animation-universal"]} ${homeStyle.btn} ${isLoad ? homeStyle["title-animation"] : ""}`}

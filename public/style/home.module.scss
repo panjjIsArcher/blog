@@ -7,6 +7,14 @@ $animation-delay:1s;
     width: 100%;
     height: 100vh;
 
+    >.glass{
+        --filter-value: 20px;
+        width: 50%;
+        height: 100%;
+        filter: blur(var(--filter-value));
+        backdrop-filter: blur(var(--filter-value));
+    }
+
     >.animation-universal {
         animation-duration: 2s;
         animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
