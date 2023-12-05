@@ -20,10 +20,10 @@ export default function Brief() {
 
     const [index, setIndex] = useState(0)
 
-    const changeIndex = (e:any) => {
+    const changeIndex = (e: any) => {
         const dataset = e.target.dataset
         setIndex(dataset.index)
-       
+
     }
 
     const ul = list.map((li, index, arr) => {

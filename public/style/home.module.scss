@@ -1,202 +1,49 @@
-@import "./various.scss";
-$animation-delay:1s;
-
-.bg {
-    background-image: url("~@/public/image/introduction.png");
-    text-align: center;
+.container {
     width: 100%;
     height: 100vh;
+    background-color: #1f1f1f;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d; // 父元素的开启3d属性 
+    perspective: 1200px;
 
-    >.glass {
-        --filter-value: 20px;
-        width: 50%;
-        height: 100%;
-        filter: blur(var(--filter-value));
-        backdrop-filter: blur(var(--filter-value));
-        box-shadow: 15px 0 20px 2px rgba(136, 105, 76, 0.31);
-        transition-duration: 0.5s;
-        background-color: rgba(136, 105, 76, 0.2);
+    >.circle {
+        width: 100vh;
+        height: 100vh;
+        border-radius: 50vh;
+        background-color: #fff;
+        position: absolute;
+        right: 0;
+        transform: translateX(50%);
     }
 
-    >.animation-universal {
-        animation-duration: $animation-delay*2;
-        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        animation-fill-mode: both;
-    }
-
-    >.main-title,
-    >.sub-title {
+    >.title {
         margin: 0;
-        color: #FFF;
+        padding: 0;
+        mix-blend-mode: difference;
+        color: #fff;
         position: absolute;
-        font-style: normal;
-        transform: translate(-50%, 0);
-        left: 50%;
-        width: 100%;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-family: system-ui;
-        font-weight: 400;
-        user-select: none;
-        display: none;
-        mix-blend-mode: overlay;
-    }
+        transform-origin: center;
 
-    >.btn {
-        position: absolute;
-        border: 3px solid rgba(0, 0, 0, 0.350);
-        background-color: rgba(169, 156, 173, 0.751);
-        transform: translate(-50%, 0);
-        left: 50%;
-        color: #FFF;
-        font-family: system-ui;
-        font-style: italic;
-        cursor: pointer;
-        font-size: 0.32rem;
-        bottom: 2.9rem;
-        padding: 0.22rem 0.29rem;
-        animation-delay: $animation-delay + $animation-delay * 2;
-        display: none;
-        border-radius: calc(0.22rem * 2 + 0.32rem);
-        
 
-        &:hover {
-            animation-name: tracking-in-expand-fwd-bottom, jello-horizontal;
-            animation-duration: 0s, 0.9s;
-            animation-delay: 0s, 0s;
-
-            
-
-        }
     }
 
     >.main-title {
-        font-size: 1.48rem;
-        top: 3.5rem;
-        animation-delay: $animation-delay;
+        left: 0.75rem;
+        top: 2.5rem;
+        font-size: 2rem;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transform: rotateY(65deg);
     }
 
     >.sub-title {
-        --size: 0.48rem;
-        font-size: var(--size);
-        color: #EFEFEF;
-        animation-delay: $animation-delay + 1s;
-        opacity: 0;
-        width: 50%;
-        padding-left: 5%;
-        left: 25%;
-        text-align: left;
-        top: 10%;
-        text-indent: calc(var(--size) * 2);
-    }
-
-    >.btn-title-animation,
-    >.sub-title-animation,
-    >.title-animation {
-        display: block;
-    }
-
-    >.title-animation {
-        animation-name: tracking-in-expand-fwd-bottom;
-    }
-
-    >.btn-title-animation {
-        animation-name: tracking-in-expand-fwd-bottom;
-    }
-
-    >.sub-title-animation {
-        animation-name: opacity-hide;
-        animation-duration: $animation-delay * 2;
-        animation-delay: $animation-delay * 4;
-        animation-fill-mode: forwards;
-
-    }
-}
-
-.leave {
-    transform: scale(0.75) translateX(0);
-    transition-duration: 1s;
-    transition-property: transform;
-    transition-delay: $animation-delay/5;
-
-    animation-duration: $animation-delay/2;
-    animation-delay: $animation-delay/5 + 1s;
-    animation-name: move-left;
-    animation-fill-mode: forwards; // 关键代码 动画结束后 停留在最后一帧
-
-}
-
-@keyframes tracking-in-expand-fwd-bottom {
-    0% {
-
-        transform: translateY(100px) translateX(-50%);
-        opacity: 0;
-    }
-
-    40% {
-        opacity: 0.6;
-    }
-
-    100% {
-        transform: translateY(0) translateX(-50%);
-        opacity: 1;
-    }
-}
-
-@keyframes jello-horizontal {
-    0% {
-        -webkit-transform: translate(-50%, 0) scale3d(1, 1, 1);
-        transform: translate(-50%, 0) scale3d(1, 1, 1);
-    }
-
-    30% {
-        -webkit-transform: translate(-50%, 0) scale3d(1.25, 0.75, 1);
-        transform: translate(-50%, 0) scale3d(1.25, 0.75, 1);
-    }
-
-    40% {
-        -webkit-transform: translate(-50%, 0) scale3d(0.75, 1.25, 1);
-        transform: translate(-50%, 0) scale3d(0.75, 1.25, 1);
-    }
-
-    50% {
-        -webkit-transform: translate(-50%, 0) scale3d(1.15, 0.85, 1);
-        transform: translate(-50%, 0) scale3d(1.15, 0.85, 1);
-    }
-
-    65% {
-        -webkit-transform: translate(-50%, 0) scale3d(0.95, 1.05, 1);
-        transform: translate(-50%, 0) scale3d(0.95, 1.05, 1);
-    }
-
-    75% {
-        -webkit-transform: translate(-50%, 0) scale3d(1.05, 0.95, 1);
-        transform: translate(-50%, 0) scale3d(1.05, 0.95, 1);
-    }
-
-    100% {
-        -webkit-transform: translate(-50%, 0) scale3d(1, 1, 1);
-        transform: translate(-50%, 0) scale3d(1, 1, 1);
-    }
-}
-
-@keyframes move-left {
-    0% {
-        transform: scale(0.75) translateX(0);
-        display: block;
-    }
-
-    100% {
-        transform: scale(0.75) translateX(-125%);
-        display: none;
-    }
-}
-
-@keyframes opacity-hide {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
+        left: 2.75rem;
+        top: 5.5rem;
+        font-size: 0.62rem;
+        text-transform: capitalize;
+        white-space: nowrap;
+        transform: rotateY(70deg) skewy(2deg);
     }
 }

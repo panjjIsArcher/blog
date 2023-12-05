@@ -1,6 +1,7 @@
 // 监听元素的背景图是否加载完成
-export const isBgImgLoaded = async (mark: string):Promise<boolean> => {
+export const isBgImgLoaded = async (mark: string): Promise<boolean> => {
   const dom: Element | null = document.querySelector(mark);
+
   if (!dom) {
     return false
   }

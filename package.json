@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "autofit.js": "^3.0.0",
     "next": "^12.3.4",
     "react": "^18",
     "react-dom": "^18",
