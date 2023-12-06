@@ -1,8 +1,17 @@
 {
   "extends": "next",
   "rules": {
-    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
-    "quotes": ["error", "double"],
+    "no-unused-vars": [
+      1,
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
     "no-dupe-args": "error",
     "no-var": "error",
     "no-console": "error",

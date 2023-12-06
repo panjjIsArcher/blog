@@ -7,14 +7,49 @@
     transform-style: preserve-3d; // 父元素的开启3d属性 
     perspective: 1200px;
 
+
+
     >.circle {
         width: 100vh;
         height: 100vh;
         border-radius: 50vh;
         background-color: #fff;
         position: absolute;
-        right: 0;
+        right: -25%;
         transform: translateX(50%);
+        animation-name: series-animation;
+        animation-duration: 8s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+
+        >.btn {
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            cursor: pointer;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #1f1f1f;
+            display: none;
+            width: 20vh;
+            height: 20vh;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 20vh;
+            transform: translateY(-50%);
+        }
+
+        &:has(>.btn[class~="animation-end"]) {
+            >.btn {
+                display: block;
+                transform-origin: center center;
+                animation-name: scale;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+
+            }
+        }
     }
 
     >.title {
@@ -24,6 +59,8 @@
         color: #fff;
         position: absolute;
         transform-origin: center;
+        user-select: none;
+        display: none;
 
 
     }
@@ -45,5 +82,36 @@
         text-transform: capitalize;
         white-space: nowrap;
         transform: rotateY(70deg) skewy(2deg);
+    }
+
+    &:has(>.title[class~="animation-start"]) {
+        >.title {
+            display: block;
+        }
+    }
+
+
+    @keyframes series-animation {
+        0% {
+            right: -25%;
+        }
+
+        50% {
+            right: 125%;
+        }
+
+        100% {
+            right: 0;
+        }
+    }
+
+    @keyframes scale {
+        0% {
+            transform: translateY(-50%) scale(0);
+        }
+
+        100% {
+            transform: translateY(-50%) scale(1);
+        }
     }
 }
