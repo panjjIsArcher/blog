@@ -1,7 +1,9 @@
+@import "./various.scss";
+
 .container {
     width: 100%;
     height: 100vh;
-    background-color: #1f1f1f;
+    background-color: $theme-color;
     overflow: hidden;
     position: relative;
     transform-style: preserve-3d; // 父元素的开启3d属性 
@@ -29,7 +31,7 @@
             font-size: 0.36rem;
             text-transform: uppercase;
             color: #fff;
-            background-color: #1f1f1f;
+            background-color: $theme-color;
             display: none;
             width: 20vh;
             height: 20vh;
@@ -48,18 +50,18 @@
                 animation-name: scale;
                 animation-duration: 2s;
                 animation-fill-mode: forwards;
-                // background-image: conic-gradient(#1f1f1f 0deg, transparent 1deg);
+                // background-image: conic-gradient($theme-color 0deg, transparent 1deg);
             }
 
             @keyframes scale {
                 0% {
                     transform: translateY(-50%) scale(0);
-                    // background-image: conic-gradient(#1f1f1f 0deg, transparent 1deg)
+                    // background-image: conic-gradient($theme-color 0deg, transparent 1deg)
                 }
 
                 100% {
                     transform: translateY(-50%) scale(1);
-                    // background-image: conic-gradient(#1f1f1f 0deg, #1f1f1f 1deg);
+                    // background-image: conic-gradient($theme-color 0deg, $theme-color 1deg);
                 }
 
             }

@@ -7,6 +7,8 @@ $md-device: 768px; // pad 768*1024
 $lg-device: 1024px; // personal computer 1024*768（常用10.4、12.1、14.1、15寸电脑使用）4:3
 $xl-device: 1280px; // desktop 1280*1024 常用14.1、15寸电脑使用）5:4
 
+$theme-color:#1f1f1f;
+
 $browser-default-font-size :19.2px;
 
 :export {
@@ -16,4 +18,5 @@ $browser-default-font-size :19.2px;
     $xl-device: $xl-device;
 
     $browser-default-font-size: $browser-default-font-size;
+    $theme-color: $theme-color
 }
