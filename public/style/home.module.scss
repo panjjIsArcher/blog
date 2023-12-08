@@ -7,8 +7,6 @@
     transform-style: preserve-3d; // 父元素的开启3d属性 
     perspective: 1200px;
 
-
-
     >.circle {
         width: 100vh;
         height: 100vh;
@@ -28,6 +26,7 @@
             top: 50%;
             left: 25%;
             cursor: pointer;
+            font-size: 0.36rem;
             text-transform: uppercase;
             color: #fff;
             background-color: #1f1f1f;
@@ -41,12 +40,27 @@
         }
 
         &:has(>.btn[class~="animation-end"]) {
+
+
             >.btn {
                 display: block;
                 transform-origin: center center;
                 animation-name: scale;
-                animation-duration: 1s;
+                animation-duration: 2s;
                 animation-fill-mode: forwards;
+                // background-image: conic-gradient(#1f1f1f 0deg, transparent 1deg);
+            }
+
+            @keyframes scale {
+                0% {
+                    transform: translateY(-50%) scale(0);
+                    // background-image: conic-gradient(#1f1f1f 0deg, transparent 1deg)
+                }
+
+                100% {
+                    transform: translateY(-50%) scale(1);
+                    // background-image: conic-gradient(#1f1f1f 0deg, #1f1f1f 1deg);
+                }
 
             }
         }
@@ -105,13 +119,5 @@
         }
     }
 
-    @keyframes scale {
-        0% {
-            transform: translateY(-50%) scale(0);
-        }
 
-        100% {
-            transform: translateY(-50%) scale(1);
-        }
-    }
 }

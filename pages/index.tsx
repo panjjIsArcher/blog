@@ -31,7 +31,7 @@ export default function Home() {
         </span>
       </div>
 
-      <h6 data-isAnimationStart={start} className={`${homeStyle.title} ${homeStyle["sub-title"]} ${start ? 'animation-start' : ''}`}>
+      <h6 className={`${homeStyle.title} ${homeStyle["sub-title"]} ${start ? 'animation-start' : ''}`}>
         Weakness and ignorance are not<br></br> barriers to survival, <br></br>  but arrogance is.</h6>
       <h1 className={`${homeStyle.title} ${homeStyle["main-title"]}`}>Dowson’s Blog</h1>
 
