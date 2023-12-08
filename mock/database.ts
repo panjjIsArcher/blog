@@ -2,7 +2,7 @@ import { describution } from "@/type/brief"
 
 export const data: describution[] = [
     {
-        describution: "my experience in developing software, websites and applications",
+        describution: "my experience in developing software, websites and apps",
         id: 1
     },
     {

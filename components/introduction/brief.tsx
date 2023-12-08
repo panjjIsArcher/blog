@@ -57,7 +57,7 @@ export default function Brief() {
             </ul>
         </div>
         <div className={`${briefStyle.right} `} >
-            <article>{describution}</article>
+            <article className={briefStyle.describution}>{describution}</article>
         </div>
     </div>
 }
