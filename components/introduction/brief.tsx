@@ -1,5 +1,7 @@
 import briefStyle from "@/public/style/brief.module.scss";
 import { useState } from "react";
+import { data } from "@/mock/database";
+import { describution } from "@/type/brief";
 
 const list = [
     {
@@ -17,12 +19,23 @@ const list = [
 
 
 export default function Brief() {
+    const [describution, setDescribution] = useState("")
 
-    const [index, setIndex] = useState(0)
-
-    const changeIndex = (e: any) => {
+    const changeIndex = async (e: any) => {
         const dataset = e.target.dataset
-        setIndex(dataset.index)
+
+        const fetch = async (id: number): Promise<describution> => {
+            const response: describution | undefined = await data.find((e) => e.id === id)
+            if (!response) {
+                return { describution: "", id }
+            }
+            return response
+        }
+
+        const id = Number(dataset.index) + 1
+        const response = await fetch(id)
+        const { describution } = response
+        setDescribution(describution)
 
     }
 
@@ -43,6 +56,8 @@ export default function Brief() {
                 {ul}
             </ul>
         </div>
-        <div className={`${briefStyle.right} `} />
+        <div className={`${briefStyle.right} `} >
+            <article>{describution}</article>
+        </div>
     </div>
 }
