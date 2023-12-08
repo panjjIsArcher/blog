@@ -7,8 +7,7 @@ $delay:1s;
 
     >.content {
         height: 100%;
-        animation-delay: 0s, $delay;
-        animation-duration: $delay, $delay;
+
 
         >.section {
             height: 100vh;
@@ -17,9 +16,6 @@ $delay:1s;
         }
     }
 
-    >.animation {
-        animation-name: move-from-right-side, scale-less;
-    }
 }
 
 .enable-scroll {
