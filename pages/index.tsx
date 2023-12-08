@@ -2,6 +2,8 @@
 
 import homeStyle from "@/public/style/home.module.scss"
 import { useState } from "react"
+// 资源
+import src from "../public/audio/impossibleMission.mp3"
 
 export default function Home() {
   const [start, setStart] = useState(false)
@@ -16,8 +18,7 @@ export default function Home() {
   }
 
   const jump = () => {
-    const src = "" // 媒体路径
-    const audio = new Audio()
+    const audio = new Audio(src)
     audio.play()
   }
 
