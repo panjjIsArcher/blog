@@ -105,6 +105,16 @@
             text-transform: capitalize;
             text-align: left;
             text-indent: calc(var(--size) * 1.5);
+
+            &::first-letter {
+                color: #d20007;
+                mix-blend-mode: difference;
+                font-size: calc(var(--size) * 1.5);
+
+            }
+
+
+
         }
     }
 }
