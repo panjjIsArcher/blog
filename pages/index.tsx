@@ -3,8 +3,7 @@
 import homeStyle from "@/public/style/home.module.scss"
 import { useState } from "react"
 import Router from "next/router"
-// 资源
-import src from "../public/audio/impossibleMission.mp3"
+const ROUTES = require("../public/router/router")
 
 export default function Home() {
   const [start, setStart] = useState(false)
@@ -19,11 +18,7 @@ export default function Home() {
   }
 
   const jump = () => {
-    const audio = new Audio(src)
-    audio.play()
-    audio.loop = true
-
-    Router.push("/introduction")
+    Router.push({ pathname: ROUTES.INTRODUCTION })
   }
 
   return (

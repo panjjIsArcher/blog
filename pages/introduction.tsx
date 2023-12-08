@@ -3,18 +3,23 @@ import Brief from "@/components/introduction/brief";
 import introStyle from "@/public/style/introduction.module.scss";
 import SlideDown from "@/components/introduction/slideDown"
 import { useEffect, useState } from "react";
+// 资源
+import src from "../public/audio/impossibleMission.mp3";
 
 export default function Introduction() {
     const [startLoad, setStartLoad] = useState(false)
     const [startScroll, setStartScroll] = useState(false)
 
+    const play = () => {
+        const audio = new Audio(src)
+        audio.play()
+
+
+    }
     useEffect(() => {
-        const fetch = async () => {
-            await new Promise(resolve => setTimeout(resolve, 2.5 * 1000))
-            setStartScroll(true)
-        }
+        play()
         setStartLoad(true)
-        fetch()
+        setStartScroll(true)
     }, [])
 
     return <div className={`${introStyle.container}  ${startScroll ? introStyle["enable-scroll"] : ""}`}>
