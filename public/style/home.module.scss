@@ -50,18 +50,18 @@
                 animation-name: scale;
                 animation-duration: 2s;
                 animation-fill-mode: forwards;
-                // background-image: conic-gradient($theme-color 0deg, transparent 1deg);
+
             }
 
             @keyframes scale {
                 0% {
                     transform: translateY(-50%) scale(0);
-                    // background-image: conic-gradient($theme-color 0deg, transparent 1deg)
+
                 }
 
                 100% {
                     transform: translateY(-50%) scale(1);
-                    // background-image: conic-gradient($theme-color 0deg, $theme-color 1deg);
+
                 }
 
             }
@@ -83,12 +83,30 @@
 
     >.main-title {
         left: 0.75rem;
-        top: 2.5rem;
+        top: 3rem;
         font-size: 2rem;
+        line-height: 2rem;
         letter-spacing: 0.12rem;
         text-transform: uppercase;
         white-space: nowrap;
         transform: rotateY(65deg);
+        position: relative;
+        color: #fff;
+
+        &::before {
+            position: absolute;
+            content: "Dowson’s Blog";
+            text-transform: uppercase;
+            color: #fff;
+            left: 0;
+            top: -0.05rem;
+            transform: rotateX(85deg) skewX(20deg) translateY(-1.7rem) translateX(0.75rem);
+            transform-origin: bottom;
+            letter-spacing: inherit;
+            z-index: -1;
+            filter: blur(0.1rem);
+            -webkit-mask-image: linear-gradient(transparent, #fff);
+        }
     }
 
     >.sub-title {

@@ -19,6 +19,13 @@
         transition-duration: 1s;
         font-family: system-ui;
         text-transform: uppercase;
+        text-shadow: 0 0 5px #fff,
+            0 0 7.5px #fff,
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff;
+        // 0 0 40px #fff;
+        ;
     }
 
     >.slide {
