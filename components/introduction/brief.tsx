@@ -24,6 +24,7 @@ export default function Brief() {
     const changeIndex = async (e: any) => {
         const dataset = e.target.dataset
 
+
         const fetch = async (id: number): Promise<describution> => {
             const response: describution | undefined = await data.find((e) => e.id === id)
             if (!response) {

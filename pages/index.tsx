@@ -32,7 +32,7 @@ export default function Home() {
       </div>
 
       <h6 className={`${homeStyle.title} ${homeStyle["sub-title"]} ${start ? 'animation-start' : ''}`}>
-        Weakness and ignorance are not<br></br> barriers to survival, <br></br>  but arrogance is.</h6>
+        Weakness and ignorance are not<br></br> barriers to survival, <br></br>  but 「arrogance」 is.</h6>
       <h1 className={`${homeStyle.title} ${homeStyle["main-title"]}`}>Dowson’s Blog</h1>
 
     </div >

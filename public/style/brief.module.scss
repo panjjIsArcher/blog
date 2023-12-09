@@ -93,6 +93,7 @@
         background-image: url("~@/public/image/home-bg.jpg");
         clip-path: polygon(var(--clip-start) 0, 100% 0%, 100% 100%, var(--clip-end) 100%);
 
+
         >.describution {
             --size: 0.8rem;
             width: calc(var(--clip-end) + 10%);
@@ -110,11 +111,19 @@
                 color: #d20007;
                 mix-blend-mode: difference;
                 font-size: calc(var(--size) * 1.5);
-
             }
 
+        }
 
 
+        @keyframes dissolve {
+            0% {
+                letter-spacing: -2rem;
+            }
+
+            100% {
+                letter-spacing: 0;
+            }
         }
     }
 }

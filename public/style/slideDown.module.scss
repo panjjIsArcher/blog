@@ -1,5 +1,7 @@
+@import "./various.scss";
+
 .container {
-    background-image: url("~@/public/image/build.jpg");
+    // background-image: url("~@/public/image/build.jpg");
     height: 100vh;
     width: 100%;
     position: relative;
@@ -10,7 +12,15 @@
     cursor: pointer;
     $deg: 100deg;
 
+    >.canvas {
+        background-color: $theme-color;
+        position: inherit;
+        width: inherit;
+        height: inherit;
+    }
+
     >.text {
+        position: absolute;
         color: #fff;
         margin: auto;
         font-size: 120px;
@@ -24,8 +34,7 @@
             0 0 10px #fff,
             0 0 20px #fff,
             0 0 30px #fff;
-        // 0 0 40px #fff;
-        ;
+
     }
 
     >.slide {
