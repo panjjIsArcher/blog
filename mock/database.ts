@@ -1,6 +1,6 @@
-import { describution } from "@/type/brief"
+import { Describution, Media } from "@/type/brief"
 
-export const data: describution[] = [
+export const data: Describution[] = [
     {
         describution: "my experience in developing software, websites and apps",
         id: 1
@@ -19,3 +19,25 @@ export const data: describution[] = [
     }
 ]
 
+export const socialMedia: Media[] = [
+    {
+        app: "facebook",
+        link: "",
+        icon: "icon-facebook-fill"
+    },
+    {
+        app: "wechat",
+        link: "lzpjj0911",
+        icon: "icon-weixin"
+    },
+    {
+        app: "phone",
+        link: "178-8249-8450",
+        icon: "icon-phone-iphone"
+    },
+    {
+        app: "mail",
+        link: "",
+        icon: "icon-gmail"
+    }
+]

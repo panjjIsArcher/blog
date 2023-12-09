@@ -38,7 +38,7 @@ export default function Introduction() {
             <section className={introStyle.section}>
                 <Brief />
             </section>
-            <section className={introStyle.section} >
+            <section >
                 <Footer />
             </section>
         </div>

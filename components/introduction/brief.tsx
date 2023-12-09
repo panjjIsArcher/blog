@@ -1,7 +1,7 @@
 import briefStyle from "@/public/style/brief.module.scss";
 import { useState } from "react";
 import { data } from "@/mock/database";
-import { describution } from "@/type/brief";
+import { Describution } from "@/type/brief";
 
 const list = [
     {
@@ -25,8 +25,8 @@ export default function Brief() {
         const dataset = e.target.dataset
 
 
-        const fetch = async (id: number): Promise<describution> => {
-            const response: describution | undefined = await data.find((e) => e.id === id)
+        const fetch = async (id: number): Promise<Describution> => {
+            const response: Describution | undefined = await data.find((e) => e.id === id)
             if (!response) {
                 return { describution: "", id }
             }

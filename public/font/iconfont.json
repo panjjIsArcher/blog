@@ -1,0 +1,37 @@
+{
+  "id": "2330800",
+  "name": "我的svg",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4937023",
+      "name": "facebook-fill",
+      "font_class": "facebook-fill",
+      "unicode": "e88d",
+      "unicode_decimal": 59533
+    },
+    {
+      "icon_id": "6988080",
+      "name": "phone-iphone",
+      "font_class": "phone-iphone",
+      "unicode": "eb81",
+      "unicode_decimal": 60289
+    },
+    {
+      "icon_id": "14684698",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "15616985",
+      "name": "gmail",
+      "font_class": "gmail",
+      "unicode": "e886",
+      "unicode_decimal": 59526
+    }
+  ]
+}

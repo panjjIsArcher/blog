@@ -1,4 +1,10 @@
-export interface describution {
+export interface Describution {
     describution: string,
     id: number
+}
+
+export interface Media {
+    app: string,
+    link: string,
+    icon: string
 }

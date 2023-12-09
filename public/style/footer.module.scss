@@ -1,8 +1,65 @@
-.footer-conatiner{
-    background-color: red;
-}
+@import "./various.scss";
 
-.footer{
-    height: 100vh;
+
+.footer {
+    // height: 100vh;
     width: 100%;
+
+    >.medium {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+
+        >li {
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            position: relative;
+
+            >i {
+                font-size: 0.6rem;
+                color: $theme-color;
+                display: block;
+                margin-bottom: 2rem;
+            }
+
+            >.waves {
+                height: 1rem;
+                display: flex;
+                filter: contrast(1);
+
+                >.wave {
+                    animation: ro 5s linear infinite;
+                    background-color: $theme-color;
+                    filter: blur(0.01rem);
+                    border-radius: 0.4rem;
+
+                }
+            }
+
+            >.pool {
+                background-color: $theme-color;
+                position: absolute;
+                width: 100%;
+                transform: translateY(-77%);
+            }
+
+            @keyframes ro {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+
+    >.base {
+        height: 1.5rem;
+        background-color: $theme-color;
+    }
 }

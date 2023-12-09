@@ -17,7 +17,7 @@ export const reCalc = (designWidth = 1920, maxWidth = 1920) => {
     //与淘宝做法不同，直接采用简单的rem换算方法1rem=100px
     let rem = (width * 100) / designWidth;
     //兼容UC开始
-    rootStyle = "html{font-size:" + rem + "px !important}";
+    rootStyle = "html{font-size:" + rem + "px}";
     rootItem =
       document.getElementById("rootsize") || document.createElement("style");
     if (!document.getElementById("rootsize")) {
@@ -75,7 +75,7 @@ export const reCalc = (designWidth = 1920, maxWidth = 1920) => {
 
 export const intersectionObserver = (
   dom,
-  callback = (entries) => {},
+  callback = (entries) => { },
   options = {}
 ) => {
   const io = new IntersectionObserver(callback, options);

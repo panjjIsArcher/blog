@@ -1,5 +1,6 @@
 import "../public/style/device.scss";
 import "../public/style/universal.scss";
+import "../public/font/iconfont.css";
 import { reCalc } from "@/public/utils/deviceAdapter";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
