@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11753609",
+      "name": "水滴",
+      "font_class": "V",
+      "unicode": "e6db",
+      "unicode_decimal": 59099
+    },
+    {
       "icon_id": "4937023",
       "name": "facebook-fill",
       "font_class": "facebook-fill",

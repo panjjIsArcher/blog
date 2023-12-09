@@ -39,5 +39,10 @@ export const socialMedia: Media[] = [
         app: "mail",
         link: "",
         icon: "icon-gmail"
+    },
+    {
+        app: "QQ",
+        link: "",
+        icon: "icon-weixin"
     }
 ]

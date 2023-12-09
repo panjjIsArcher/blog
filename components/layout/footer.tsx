@@ -6,6 +6,7 @@ import { Media } from "@/type/brief"
 export default function Footer() {
     const [animation] = useState(false)
     const [medium, setMedium] = useState<Media[]>([])
+    const [app, setApp] = useState("")
     const section = useRef(null)
 
     const fetchMedia = async () => {
@@ -13,13 +14,20 @@ export default function Footer() {
         return medium
     }
 
+    const start = (e: any) => {
+        const app = e.target.dataset.app
+        setApp(app)
+    }
+
     const setUl = () => {
-        const waveNum = 4 * medium.length
-        const height = `calc(100vw / ${waveNum})`
-        const bottom = `calc(100vw * 0.75/ ${waveNum})`
+        const height = `calc(100vw / 16)`
+        const length = medium.length
         return medium.map(media => {
-            return <li key={media.app}>
-                <i className={`${media.icon} iconfont`} />
+            return <li key={media.app} className={`${footerStyle["width-" + length]}`}>
+                <i className={`${media.icon} iconfont ${app === media.app ? footerStyle['i-active'] : ''}`} data-app={media.app} onMouseEnter={start} />
+                <span className={`icon-V iconfont ${footerStyle.drop} ${media.app === app ? footerStyle.droping : ""}`} />
+                <span className={`icon-V iconfont ${footerStyle.drop} ${media.app === app ? footerStyle.droping : ""}`} />
+                <span className={`icon-V iconfont ${footerStyle.drop} ${media.app === app ? footerStyle.droping : ""}`} />
                 <div className={footerStyle.waves}>
                     <div className={`${footerStyle.wave} wave`} />
                     <div className={`${footerStyle.wave} wave`} />
@@ -38,6 +46,8 @@ export default function Footer() {
                         {`.pool{ height:${height};}`}
                     </style>
                 </div>
+
+
             </li>
         })
     }
@@ -66,6 +76,6 @@ export default function Footer() {
         <ul className={footerStyle.medium}>
             {setUl()}
         </ul>
-        {/* <div className={footerStyle.base}>sss</div> */}
+        <div className={footerStyle.base}>sss</div>
     </div>
 }
