@@ -6,6 +6,67 @@
     position: relative;
     overflow: hidden;
 
+    >.container {
+        display: flex;
+        align-items: center;
+        height: 60%;
+        user-select: none;
+        font-weight: bold;
+
+        >.title {
+            flex: 1;
+
+            >h6 {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                margin: 0;
+                display: inline-block;
+
+                &::after {
+                    content: "";
+                    height: 0.1rem;
+                    background-color: $theme-color;
+                    display: block;
+                }
+            }
+
+            >.sub-title {
+                font-size: 0.3rem;
+                text-transform: initial;
+                text-align: right;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+        }
+
+        >.skills {
+            list-style-type: none;
+            text-align: left;
+            flex: 2;
+
+            >.icon {
+                font-size: 0.63rem;
+
+                >span {
+                    margin-left: 0.3rem;
+
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+
+                &:hover {
+                    color: rgb(209, 0, 10);
+
+                    >span {
+                        color: $theme-color;
+                    }
+                }
+
+            }
+        }
+    }
+
     >.list {
         list-style-type: none;
         position: absolute;
@@ -17,8 +78,7 @@
         perspective: 800px;
         width: 2.3rem;
         aspect-ratio: 1/1.65;
-
-        transform: translateY(90%);
+        transform: translateY(90%) translateX(-50%);
 
         >li {
             transform-style: preserve-3d;
@@ -30,8 +90,11 @@
             cursor: pointer;
             width: inherit;
             aspect-ratio: inherit;
-            transform: translateX(-50%) rotateY(0deg);
-            transition-duration: 1.5s;
+            transform-origin: bottom;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+            animation-duration: 0.5s;
+            transition-duration: 1s;
 
             >div {
                 height: 100%;
@@ -49,31 +112,23 @@
             >.front {
                 transform: rotateY(180deg);
             }
-
-
         }
-
-        >.active {
-            transform: translateX(-50%) rotateY(180deg);
-        }
-
     }
 
     >.is-loaded {
         animation-name: show;
-        animation-duration: 2s;
+        animation-duration: 1s;
         animation-delay: 2s;
         animation-fill-mode: forwards;
-
     }
 
     @keyframes show {
         0% {
-            transform: translateY(90%);
+            transform: translateY(90%) translateX(-50%);
         }
 
         100% {
-            transform: translateY(25%);
+            transform: translateY(25%) translateX(-50%);
         }
     }
 }

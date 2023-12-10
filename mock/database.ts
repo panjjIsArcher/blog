@@ -49,7 +49,7 @@ export const socialMedia: Media[] = [
 
 export const stacks: Stack[] = [{
     name: "front-end",
-    skills: ["JavaScript, es6, typeescript", "css(3),scss,less", "w3c standard specifications", "http(s) protocol and API requests "]
+    skills: ["JavaScript, es6, typescript", "css(3),scss,less", "w3c standard specifications", "http(s) protocol and API requests "]
 },
 {
     name: "full stack",
@@ -60,8 +60,8 @@ export const stacks: Stack[] = [{
     skills: ["front-end framework: vue.js, react.js", "SSR framework (next.js)", "Workpress", "front-end performance optimization"]
 },
 {
-    name: "design",
-    skills: ["Figma"]
+    name: "design & PM",
+    skills: ["Figma", "Xmind"]
 }
 
 ]

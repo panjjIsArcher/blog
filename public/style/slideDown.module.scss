@@ -49,22 +49,22 @@
     }
 
     >.slide-left-1 {
-        left: -35%;
+        left: -35vw;
         transform: rotateZ($deg);
     }
 
     >.slide-left-2 {
-        left: -35%;
+        left: -35vw;
         transform: rotateZ(-$deg);
     }
 
     >.slide-right-1 {
-        right: -35%;
+        right: -35vw;
         transform: rotateZ($deg);
     }
 
     >.slide-right-2 {
-        right: -35%;
+        right: -35vw;
         transform: rotateZ(-$deg);
     }
 
@@ -72,14 +72,14 @@
 
         >.slide-left-2,
         >.slide-left-1 {
-            left: -45%;
+            left: -45vw;
             opacity: 0.2;
 
         }
 
         >.slide-right-1,
         >.slide-right-2 {
-            right: -45%;
+            right: -45vw;
             opacity: 0.2;
 
         }
