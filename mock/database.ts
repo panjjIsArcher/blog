@@ -22,7 +22,7 @@ export const data: Describution[] = [
 export const socialMedia: Media[] = [
     {
         app: "facebook",
-        link: "",
+        link: " www.baidu.com",
         icon: "icon-facebook-fill"
     },
     {
@@ -37,12 +37,12 @@ export const socialMedia: Media[] = [
     },
     {
         app: "mail",
-        link: "",
+        link: " www.baidu.com",
         icon: "icon-gmail"
     },
     {
         app: "QQ",
-        link: "",
+        link: " www.baidu.com",
         icon: "icon-weixin"
     }
 ]

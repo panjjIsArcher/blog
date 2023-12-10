@@ -7,6 +7,7 @@ export default function Footer() {
     const [animation] = useState(false)
     const [medium, setMedium] = useState<Media[]>([])
     const [app, setApp] = useState("")
+    const [url, setUrl] = useState("")
     const section = useRef(null)
 
     const fetchMedia = async () => {
@@ -15,8 +16,9 @@ export default function Footer() {
     }
 
     const start = (e: any) => {
-        const app = e.target.dataset.app
+        const { app, url } = e.target.dataset
         setApp(app)
+        setUrl(url)
     }
 
     const setUl = () => {
@@ -24,7 +26,7 @@ export default function Footer() {
         const length = medium.length
         return medium.map(media => {
             return <li key={media.app} className={`${footerStyle["width-" + length]}`}>
-                <i className={`${media.icon} iconfont ${app === media.app ? footerStyle['i-active'] : ''}`} data-app={media.app} onMouseEnter={start} />
+                <i className={`${media.icon} iconfont ${app === media.app ? footerStyle['i-active'] : ''}`} data-app={media.app} data-url={media.link} onMouseEnter={start} />
                 <span className={`icon-V iconfont ${footerStyle.drop} ${media.app === app ? footerStyle.droping : ""}`} />
                 <span className={`icon-V iconfont ${footerStyle.drop} ${media.app === app ? footerStyle.droping : ""}`} />
                 <span className={`icon-V iconfont ${footerStyle.drop} ${media.app === app ? footerStyle.droping : ""}`} />
@@ -46,13 +48,21 @@ export default function Footer() {
                         {`.pool{ height:${height};}`}
                     </style>
                 </div>
-
-
             </li>
         })
     }
 
-    // 监听animation
+    useEffect(() => {
+        setLink(url)
+    }, [url])
+
+    const setLink = (url: string) => {
+        return <h3 className={footerStyle.link}>
+            {url}
+        </h3>
+    }
+
+
     useEffect(() => {
         const fetch = async () => {
             const medium = await fetchMedia()
@@ -72,10 +82,13 @@ export default function Footer() {
         )
     }, [animation])
 
+
     return <div ref={section} className={footerStyle.footer}>
         <ul className={footerStyle.medium}>
             {setUl()}
         </ul>
-        <div className={footerStyle.base}>sss</div>
+        <div className={footerStyle.base}>
+            {setLink(url)}
+        </div>
     </div>
 }
