@@ -76,7 +76,7 @@ export default function Stack() {
         <div className={stackStyle.container}>
             <div className={stackStyle.title}>
                 <h6>{info.name}</h6>
-                <p className={stackStyle["sub-title"]}>Here is my 「Skill Stack」 </p>
+                <p className={stackStyle["sub-title"]}>Here is my「Skill Stack」 </p>
             </div>
             <ul className={stackStyle.skills}>
                 {

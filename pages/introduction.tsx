@@ -1,11 +1,13 @@
 import Footer from "@/components/layout/footer"
 import Brief from "@/components/introduction/brief";
 import Stack from "@/components/introduction/stack";
+import Projects from "@/components/introduction/projects";
 import introStyle from "@/public/style/introduction.module.scss";
+import Experience from "@/components/introduction/experience";
 import SlideDown from "@/components/introduction/slideDown"
 import { useEffect, useState } from "react";
-// 资源
-import src from "../public/audio/impossibleMission.mp3";
+// eslint-disable-next-line
+import src from "@/public/audio/impossibleMission.mp3";
 
 export default function Introduction() {
     const [startLoad, setStartLoad] = useState(false)
@@ -40,7 +42,13 @@ export default function Introduction() {
                 <Brief />
             </section>
             <section className={introStyle.section}>
+                <Experience />
+            </section>
+            <section className={introStyle.section}>
                 <Stack />
+            </section>
+            <section className={introStyle.section}>
+                <Projects />
             </section>
             <section >
                 <Footer />

@@ -57,7 +57,7 @@ export const stacks: Stack[] = [{
 },
 {
     name: "architect",
-    skills: ["front-end framework: vue.js, react.js", "SSR framework (next.js)", "Workpress", "front-end performance optimization"]
+    skills: ["front-end framework: vue.js, react.js", "SSR framework & next.js", "Workpress", "front-end performance optimization"]
 },
 {
     name: "design & PM",
