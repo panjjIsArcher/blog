@@ -1,0 +1,79 @@
+@import "./various.scss";
+
+.stack {
+    background-color: $sub-color;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    >.list {
+        list-style-type: none;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        font-size: 0.36rem;
+        margin: 0;
+        padding: 0;
+        perspective: 800px;
+        width: 2.3rem;
+        aspect-ratio: 1/1.65;
+
+        transform: translateY(90%);
+
+        >li {
+            transform-style: preserve-3d;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 0.08rem;
+            backface-visibility: hidden;
+            cursor: pointer;
+            width: inherit;
+            aspect-ratio: inherit;
+            transform: translateX(-50%) rotateY(0deg);
+            transition-duration: 1.5s;
+
+            >div {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+
+            >.back {
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-image: url("../image/card.png");
+                filter: grayscale(1);
+            }
+
+            >.front {
+                transform: rotateY(180deg);
+            }
+
+
+        }
+
+        >.active {
+            transform: translateX(-50%) rotateY(180deg);
+        }
+
+    }
+
+    >.is-loaded {
+        animation-name: show;
+        animation-duration: 2s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+
+    }
+
+    @keyframes show {
+        0% {
+            transform: translateY(90%);
+        }
+
+        100% {
+            transform: translateY(25%);
+        }
+    }
+}

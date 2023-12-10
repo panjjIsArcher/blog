@@ -1,5 +1,6 @@
 import Footer from "@/components/layout/footer"
 import Brief from "@/components/introduction/brief";
+import Stack from "@/components/introduction/stack";
 import introStyle from "@/public/style/introduction.module.scss";
 import SlideDown from "@/components/introduction/slideDown"
 import { useEffect, useState } from "react";
@@ -37,6 +38,9 @@ export default function Introduction() {
             </section>
             <section className={introStyle.section}>
                 <Brief />
+            </section>
+            <section className={introStyle.section}>
+                <Stack />
             </section>
             <section >
                 <Footer />

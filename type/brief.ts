@@ -8,3 +8,8 @@ export interface Media {
     link: string,
     icon: string
 }
+
+export interface Stack {
+    name: string,
+    skills: string[]
+}
