@@ -23,9 +23,49 @@
             padding-right: 0.3rem;
         }
 
-        >.card {
-            color: $sub-color;
+        >.card-container {
+            color: #000;
             cursor: pointer;
+            width: 75%;
+            aspect-ratio: 3/4;
+            position: relative;
+
+            &:hover {
+                >.back {
+                    transform: rotateZ(-5deg);
+                }
+            }
+
+            >.card {
+                border-radius: 0.3rem;
+                border: 0.01rem solid rgba($sub-color, 0.1);
+                width: 100%;
+                aspect-ratio: inherit;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            >.front {
+                background-color: rgba(#fff, 0.02);
+                backdrop-filter: blur(2rem);
+                background-image: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
+
+                >img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+
+            >.back {
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), transparent);
+                transform-origin: bottom;
+                background-color: rgba(#000, 0.05);
+                transform: rotateZ(0);
+                transition-duration: 0.3s;
+                z-index: -1;
+            }
+
         }
 
         >.ul {}

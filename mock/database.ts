@@ -70,3 +70,6 @@ export const stacks: Stack[] = [{
 }
 
 ]
+
+
+export const labels: string[] = ["front-end engineer", "full-stack engineer", "designer", "P.M", "INFP", "crazy mad at C.S", "cat adopter"]

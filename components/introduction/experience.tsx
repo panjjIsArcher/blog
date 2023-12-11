@@ -1,8 +1,36 @@
+import { labels as labelsData } from "@/mock/database";
 import experienceStyle from "@/public/style/experience.module.scss";
 import { useEffect, useState } from "react";
 
 function Card() {
-    return <div className={experienceStyle.card}>这是卡片</div>
+    const [labels, setLabels] = useState<string[]>([])
+
+    const fetch = () => {
+        const data = labelsData
+        return data
+    }
+
+    const labelsList = () => {
+        return labels.map(label => {
+            return <li key={label}>{label}</li>
+        })
+    }
+
+    useEffect(() => {
+        const labels = fetch()
+        setLabels(labels)
+
+    })
+
+    return <div className={`${experienceStyle["card-container"]} position-center`}>
+        <div className={`${experienceStyle.back} ${experienceStyle.card} `} />
+        <div className={`${experienceStyle.front} ${experienceStyle.card}`}>
+            <img src="" alt="" />
+            <ul>
+                {labelsList()}
+            </ul>
+        </div>
+    </div>
 }
 
 function Ul() {
@@ -19,7 +47,7 @@ export default function Experience() {
 
     return <div className={experienceStyle.container}>
         <div className={experienceStyle.left}>
-            <nav className={`${experienceStyle.nav} iconfont  ${cardVisible ? "icon-zhankai" : "icon-close-bold"}`} onClick={changeNav} />
+            <nav className={`${experienceStyle.nav} iconfont   ${cardVisible ? "icon-zhankai" : "icon-close-bold"}`} onClick={changeNav} />
             {cardVisible ? <Card /> : <Ul />}
         </div>
 
