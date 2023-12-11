@@ -1,1 +1,41 @@
-.container {}
+@import "./various.scss";
+
+.container {
+    display: flex;
+    height: 100%;
+
+    >.left,
+    >.right {
+        height: inherit;
+    }
+
+    >.left {
+        width: 33%;
+        position: relative;
+
+        >.nav {
+            text-align: right;
+            color: $theme-color;
+            height: 0.5rem;
+            font-size: 0.4rem;
+            line-height: 0.5rem;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+        }
+
+        >.card {
+            color: $sub-color;
+            cursor: pointer;
+        }
+
+        >.ul {}
+    }
+
+    >.right {
+        width: 67%;
+        background-color: $theme-color;
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        color: $sub-color;
+    }
+}

@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "15838563",
+      "name": "close-bold",
+      "font_class": "close-bold",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "1137061",
+      "name": "qq",
+      "font_class": "qq",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "3092289",
+      "name": "展开",
+      "font_class": "zhankai",
+      "unicode": "e786",
+      "unicode_decimal": 59270
+    },
+    {
+      "icon_id": "9307591",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "33987013",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "36040187",
+      "name": "google",
+      "font_class": "google",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
       "icon_id": "97398",
       "name": "0024-spades",
       "font_class": "0024spades",

@@ -36,20 +36,25 @@ export const socialMedia: Media[] = [
         icon: "icon-phone-iphone"
     },
     {
-        app: "mail",
-        link: " www.baidu.com",
+        app: "Google mail",
+        link: "www.baidu.com",
         icon: "icon-gmail"
     },
     {
-        app: "QQ",
-        link: " www.baidu.com",
-        icon: "icon-weixin"
+        app: "github",
+        link: "icon-github",
+        icon: "icon-github"
+    },
+    {
+        app: "Tencent mail",
+        link: "251907882@qq.com",
+        icon: "icon-qq"
     }
 ]
 
 export const stacks: Stack[] = [{
     name: "front-end",
-    skills: ["JavaScript, es6, typescript", "css(3),scss,less", "w3c standard specifications", "http(s) protocol and API requests "]
+    skills: ["JavaScript, es6, typescript", "css(3), scss, less", "w3c standard specifications", "http(s) protocol and API requests "]
 },
 {
     name: "full stack",
@@ -57,7 +62,7 @@ export const stacks: Stack[] = [{
 },
 {
     name: "architect",
-    skills: ["front-end framework: vue.js, react.js", "SSR framework & next.js", "Workpress", "front-end performance optimization"]
+    skills: ["front-end framework: vue.js, react.js", "SSR framework & next.js", "wordpress", "front-end performance optimization"]
 },
 {
     name: "design & PM",
