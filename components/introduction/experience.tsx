@@ -6,6 +6,7 @@ import avatar from "@/public/image/avatar.jpg"
 import { Job } from "@/type/brief";
 import { intersectionObserver } from "@/public/utils/deviceAdapter";
 import Loading from "../loading";
+import Ariticle from "./ariticle";
 
 function Card() {
     const [labels, setLabels] = useState<string[]>([])
@@ -67,7 +68,7 @@ export default function Experience() {
     }
 
     const fetch = async () => {
-        await new Promise(resolve => setTimeout(resolve, 5 * 1000))
+        await new Promise(resolve => setTimeout(resolve, 6 * 1000))
         setAriticle(true)
     }
 
@@ -92,8 +93,8 @@ export default function Experience() {
         </div>
 
         <div className={experienceStyle.right} ref={rightSection}>
-            {/* {ariticle ? "这是" : <Loading />} */}
-            <Loading />
+            {ariticle ? <Ariticle /> : <Loading />}
+
         </div>
     </div >)
 }

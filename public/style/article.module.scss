@@ -1,0 +1,14 @@
+.article {
+    padding: 0.3rem 0.4rem;
+    text-align: left;
+    color: #fff;
+    $title-size: 0.1rem;
+
+    h1 {
+        font-size: $title-size * 5;
+    }
+
+    h2 {
+        font-size: $title-size * 4;
+    }
+}
