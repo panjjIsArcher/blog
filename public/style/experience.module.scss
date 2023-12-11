@@ -12,6 +12,7 @@
     >.left {
         width: 33%;
         position: relative;
+        overflow: hidden;
 
         >.nav {
             text-align: right;
@@ -26,12 +27,17 @@
         >.title,
         >.subtitle {
             color: $theme-color;
-            font-size: 0.23rem;
             margin: 0 auto;
         }
 
+        >.subtitle {
+            font-size: 0.23rem;
+            line-height: 0.3rem;
+        }
+
         >.title {
-            font-size: 0.4rem;
+            font-size: 0.45rem;
+            line-height: 0.45rem;
         }
 
         >.card-container {
@@ -110,7 +116,47 @@
 
         }
 
-        >.ul {}
+        >.ul {
+            --distance: 100% - 0.45rem - 0.3rem - 0.5rem;
+            background-color: $theme-color;
+            color: #fff;
+            height: calc(var(--distance));
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        >.move-in {
+            animation: move 0.4s forwards ease-in;
+        }
+
+        >.move-out {
+            animation: move-o 0.4s forwards ease-in;
+
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(100%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes move-o {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
     }
 
     >.right {

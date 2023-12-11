@@ -45,8 +45,9 @@ function Card() {
     </div>
 }
 
-function Ul() {
-    return <ul className={experienceStyle.ul}>这是列表</ul>
+function Ul(props: { cardVisible: boolean }) {
+    const cardVisible = props.cardVisible
+    return <ul className={`${experienceStyle.ul} ${cardVisible ? experienceStyle["move-in"] : experienceStyle["move-out"]}`}>这是列表</ul>
 }
 
 export default function Experience() {
@@ -62,7 +63,8 @@ export default function Experience() {
             <nav className={`${experienceStyle.nav} iconfont   ${cardVisible ? "icon-zhankai" : "icon-close-bold"}`} onClick={changeNav} />
             <h4 className={experienceStyle.title}>Bruce Dowson</h4>
             <h5 className={experienceStyle.subtitle}>go by 「Jiajie Pan」</h5>
-            {cardVisible ? <Card /> : <Ul />}
+            <Card />
+            <Ul cardVisible={cardVisible} />
         </div>
 
         <div className={experienceStyle.right}>
