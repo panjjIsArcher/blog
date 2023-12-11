@@ -23,12 +23,23 @@
             padding-right: 0.3rem;
         }
 
+        >.title,
+        >.subtitle {
+            color: $theme-color;
+            font-size: 0.23rem;
+            margin: 0 auto;
+        }
+
+        >.title {
+            font-size: 0.4rem;
+        }
+
         >.card-container {
             color: #000;
             cursor: pointer;
             width: 75%;
             aspect-ratio: 3/4;
-            position: relative;
+            position: absolute;
 
             &:hover {
                 >.back {
@@ -47,18 +58,49 @@
             }
 
             >.front {
-                background-color: rgba(#fff, 0.02);
-                backdrop-filter: blur(2rem);
-                background-image: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
+                background-color: rgba(#000, 0.1);
+                backdrop-filter: blur(1.2rem);
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.015), transparent);
+                overflow: hidden;
 
-                >img {
-                    width: 100%;
-                    display: block;
+                >ul {
+                    list-style-type: none;
+                    column-gap: 0.1rem;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    >li {
+                        width: fit-content;
+                        background-color: $theme-color;
+                        border-radius: 0.05rem;
+                        color: #fff;
+                        font-size: 0.29rem;
+                        margin: 0.05rem 0;
+                        padding: 0.05rem 0.15rem;
+                        font-size: 0.18rem;
+                        animation: opa 1.25s forwards var(--delay);
+                        opacity: 0;
+                        transform: translateY(0.5rem);
+
+                    }
+
+                    @keyframes opa {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(0.5rem);
+                        }
+
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+
+                    }
                 }
             }
 
             >.back {
-                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), transparent);
+                background-image: linear-gradient(to bottom, rgba(#000, 0.075), transparent);
                 transform-origin: bottom;
                 background-color: rgba(#000, 0.05);
                 transform: rotateZ(0);
