@@ -23,7 +23,7 @@ export default function Stack() {
         return st.map((e, index) => {
 
             const deg = -60 + index * gap
-            return <li key={e.name} data-name={e.name} className={`card-list ${cardName === e.name ? stackStyle.active : ''}`} onMouseEnter={rolling} onClick={select} >
+            return <li key={e.name} data-name={e.name} className={`card-list ${cardName === e.name ? stackStyle.active : ''}`} onMouseEnter={rolling} onMouseOver={select} >
                 <div className={stackStyle.front}>{e.name}</div>
                 <div className={stackStyle.back} />
 
