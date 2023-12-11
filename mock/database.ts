@@ -67,13 +67,9 @@ export const stacks: Stack[] = [{
 {
     name: "design & PM",
     skills: ["Figma", "Xmind"]
-}
+}]
 
-]
-
-
-export const labels: string[] = ["front-end engineer", "full-stack engineer", "designer", "P.M", "INFP", "crazy mad at C.S", "cat adopter"]
-
+export const labels: string[] = ["front-end engineer", "full-stack engineer", "designer", "P.M", "Bachelor's Degree in Computer Science", "INFP", "crazy mad at C.S", "cat adopter"]
 
 export const jobs: Job[] = [
     {
@@ -94,3 +90,5 @@ export const jobs: Job[] = [
         describution: "",
         subTitle: ""
     }]
+
+export const ariticle = "这是文章的"

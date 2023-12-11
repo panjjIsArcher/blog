@@ -1,9 +1,11 @@
-import { labels as labelsData, jobs as jobsData } from "@/mock/database";
+import { labels as labelsData, jobs as jobsData, ariticle as ariticleData } from "@/mock/database";
 import experienceStyle from "@/public/style/experience.module.scss";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import avatar from "@/public/image/avatar.jpg"
 import { Job } from "@/type/brief";
+import { intersectionObserver } from "@/public/utils/deviceAdapter";
+import Loading from "../loading";
 
 function Card() {
     const [labels, setLabels] = useState<string[]>([])
@@ -56,14 +58,31 @@ function Jobs() {
 }
 
 export default function Experience() {
-    const [cardVisible, setCardVisible] = useState(true)
+    const [cardVisible, setCardVisible] = useState(false)
+    const [ariticle, setAriticle] = useState(false)
 
+    const rightSection = useRef(null)
     const changeNav = () => {
-        const visible = !cardVisible
-        setCardVisible(visible)
+        setCardVisible(!cardVisible)
     }
 
-    return <div className={experienceStyle.container}>
+    const fetch = async () => {
+        await new Promise(resolve => setTimeout(resolve, 5 * 1000))
+        setAriticle(true)
+    }
+
+    useEffect(() => {
+        intersectionObserver(rightSection.current, async (entries) => {
+            const isIntersecting: boolean = entries.every((entry: { isIntersecting: boolean }) => entry.isIntersecting)
+            if (isIntersecting) {
+                await fetch()
+            } else {
+                setAriticle(false)
+            }
+        }, { threshold: 0.5 })
+    })
+
+    return (<div className={experienceStyle.container}>
         <div className={experienceStyle.left}>
             <nav className={`${experienceStyle.nav} iconfont   ${!cardVisible ? "icon-zhankai" : "icon-close-bold"}`} onClick={changeNav} />
             <h4 className={experienceStyle.title}>Bruce Dowson</h4>
@@ -72,8 +91,9 @@ export default function Experience() {
             <Ul cardVisible={cardVisible} />
         </div>
 
-        <div className={experienceStyle.right}>
-            这里是文字
+        <div className={experienceStyle.right} ref={rightSection}>
+            {/* {ariticle ? "这是" : <Loading />} */}
+            <Loading />
         </div>
-    </div >
+    </div >)
 }
