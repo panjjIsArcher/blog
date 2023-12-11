@@ -1,4 +1,4 @@
-import { Describution, Media, Stack } from "@/type/brief"
+import { Describution, Job, Media, Stack } from "@/type/brief"
 
 export const data: Describution[] = [
     {
@@ -73,3 +73,24 @@ export const stacks: Stack[] = [{
 
 
 export const labels: string[] = ["front-end engineer", "full-stack engineer", "designer", "P.M", "INFP", "crazy mad at C.S", "cat adopter"]
+
+
+export const jobs: Job[] = [
+    {
+        name: "Before working",
+        describution: "",
+        subTitle: ""
+    },
+    {
+        name: "Front-end Engineer",
+        describution: "",
+        subTitle: ""
+    }, {
+        name: "Full-stack Engineer",
+        describution: "",
+        subTitle: ""
+    }, {
+        name: "Designer & P.M",
+        describution: "",
+        subTitle: ""
+    }]

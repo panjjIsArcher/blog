@@ -125,8 +125,31 @@
             z-index: 2;
             width: 100%;
             margin: 0;
-            padding: 0;
+            padding: 3rem 0 0 0;
+            border-top-left-radius: 0.35rem;
+            border-top-right-radius: 0.35rem;
+            font-weight: bold;
+            text-align: left;
+            list-style-type: none;
 
+            >.job {
+                font-size: 0.45rem;
+                cursor: pointer;
+                width: fit-content;
+                position: relative;
+                line-height: 0.8rem;
+                border-bottom: 0.03rem solid #fff;
+                margin: 0.3rem 0 0.3rem 1rem;
+                transition-duration: 0.75s, 1.2s;
+                transform: scale(1);
+                transition-property: transform, border-bottom-color;
+                transition-delay: 0s, 0.5s;
+
+                &:hover {
+                    transform: scale(1.2);
+                    border-bottom-color: rgba(204, 0, 16, 1);
+                }
+            }
         }
 
         >.move-in {
@@ -135,7 +158,6 @@
 
         >.move-out {
             animation: move-o 0.4s forwards ease-in;
-
         }
 
         @keyframes move {
@@ -157,6 +179,8 @@
                 transform: translateY(100%);
             }
         }
+
+
     }
 
     >.right {

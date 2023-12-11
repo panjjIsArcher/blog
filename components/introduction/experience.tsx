@@ -1,8 +1,9 @@
-import { labels as labelsData } from "@/mock/database";
+import { labels as labelsData, jobs as jobsData } from "@/mock/database";
 import experienceStyle from "@/public/style/experience.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import avatar from "@/public/image/avatar.jpg"
+import { Job } from "@/type/brief";
 
 function Card() {
     const [labels, setLabels] = useState<string[]>([])
@@ -15,14 +16,8 @@ function Card() {
     const labelsList = () => {
         return labels.map((label, index) => {
             return <li key={label} className={`{experienceStyle.label} label-item`}>
-                {/* animation-delay: ${index * 0.3}s; */}
-                <style jsx>{
-                    `.label-item{
-                       --delay: ${index * 0.3}s;
-                    }`
-                }</style>
+                <style jsx>{`.label-item{--delay: ${index * 0.3}s;}`}</style>
                 {label}
-
             </li>
         })
     }
@@ -30,11 +25,9 @@ function Card() {
     useEffect(() => {
         const labels = fetch()
         setLabels(labels)
-
     })
 
     return <div className={`${experienceStyle["card-container"]} position-center`}>
-
         <div className={`${experienceStyle.back} ${experienceStyle.card} `} />
         <div className={`${experienceStyle.front} ${experienceStyle.card}`}>
             <Image src={avatar} layout="responsive" className={experienceStyle.image} />
@@ -47,7 +40,19 @@ function Card() {
 
 function Ul(props: { cardVisible: boolean }) {
     const cardVisible = props.cardVisible
-    return <ul className={`${experienceStyle.ul} ${cardVisible ? experienceStyle["move-in"] : experienceStyle["move-out"]}`}>这是列表</ul>
+    return <ul className={`${experienceStyle.ul} ${cardVisible ? experienceStyle["move-in"] : experienceStyle["move-out"]}`}>
+        {!cardVisible ? '' : <Jobs />}
+    </ul>
+}
+
+function Jobs() {
+    const [jobs, setJobs] = useState<Job[]>([])
+    useEffect(() => {
+        setJobs(jobsData)
+    })
+    return jobs.map(job => {
+        return <li className={experienceStyle.job} key={job.name}>{job.name}</li>
+    })
 }
 
 export default function Experience() {
@@ -60,7 +65,7 @@ export default function Experience() {
 
     return <div className={experienceStyle.container}>
         <div className={experienceStyle.left}>
-            <nav className={`${experienceStyle.nav} iconfont   ${cardVisible ? "icon-zhankai" : "icon-close-bold"}`} onClick={changeNav} />
+            <nav className={`${experienceStyle.nav} iconfont   ${!cardVisible ? "icon-zhankai" : "icon-close-bold"}`} onClick={changeNav} />
             <h4 className={experienceStyle.title}>Bruce Dowson</h4>
             <h5 className={experienceStyle.subtitle}>go by 「Jiajie Pan」</h5>
             <Card />
