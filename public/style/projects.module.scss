@@ -1,1 +1,74 @@
-.container {}
+@import "./various.scss";
+$duration: 1s;
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    $rate: 99.5%;
+    $rest: 100% - $rate;
+
+    animation: {
+        name: bg-color;
+        duration: $duration;
+        delay: $duration;
+        fill-mode: forwards;
+    }
+
+    >.middle {
+        >.box {
+            background-color: $theme-color;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+
+            animation: {
+                duration: $duration;
+                fill-mode: forwards;
+            }
+        }
+
+        >.left-box {
+            clip-path: polygon($rate 0, 0 0, 0 $rate);
+            animation-name: move-from-left;
+        }
+
+        >.right-box {
+            clip-path: polygon($rate $rate, $rate $rest, 0 $rate);
+            animation-name: move-from-right;
+        }
+
+        @keyframes move-from-left {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+        @keyframes move-from-right {
+            0% {
+                left: 100%;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+    }
+
+}
+
+
+
+@keyframes bg-color {
+    0% {
+        background-image: linear-gradient(to right, transparent, transparent);
+    }
+
+    100% {
+        background-image: linear-gradient(to right, $sub-color, $sub-color);
+    }
+}
