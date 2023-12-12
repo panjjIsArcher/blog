@@ -1,4 +1,5 @@
 import proStyle from "@/public/style/projects.module.scss";
+import Project from "./project";
 import { intersectionObserver } from "@/public/utils/deviceAdapter";
 import { useEffect, useRef, useState } from "react";
 
@@ -20,6 +21,11 @@ export default function Projects() {
         {loaded ? <div className={proStyle.middle}>
             <div className={`${proStyle["left-box"]}  ${proStyle.box}`} />
             <div className={`${proStyle["right-box"]}  ${proStyle.box}`} />
+            <div className={`${proStyle["projects"]}`}>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
         </div> : ""}
     </div>)
 }

@@ -7,7 +7,7 @@ import Experience from "@/components/introduction/experience";
 import SlideDown from "@/components/introduction/slideDown"
 import { useEffect, useState } from "react";
 // eslint-disable-next-line
-import src from "@/public/audio/impossibleMission.mp3";
+import src from "@/public/audio/del.mp3";
 
 export default function Introduction() {
     const [startLoad, setStartLoad] = useState(false)

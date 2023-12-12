@@ -63,7 +63,7 @@ export default function Stack() {
                 setIsLoaded(isIntersecting)
 
             }
-        }, { threshold: 0.7 }) // 页面完全进入时候
+        }, { threshold: 0.65 }) // 页面完全进入时候
     })
 
     const rolling = (e: any) => {
