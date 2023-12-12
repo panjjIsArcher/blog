@@ -73,33 +73,83 @@ $duration: 1s;
                 list-style-type: none;
                 overflow: hidden;
                 $gap: 2.5vw;
-                display: flex;
-                flex-wrap: nowrap;
                 position: relative;
 
                 >li {
                     $width: 30vw;
                     width: 30vw;
-                    background-color: red;
+                    background-color: $sub-color;
                     height: 20vw;
                     position: absolute;
                     left: calc(var(--index) * $width + $gap * (var(--index) + 1));
                     $top: 5vh;
 
+                    animation: {
+                        duration: 2s;
+                        fill-mode: forwards;
+                        delay: calc($duration * (1.25* (var(--index) + 1)));
+                        // iteration-count: infinite;
+                    }
+
                     &:first-child {
-                        top: 100vh - $top;
+                        top: 0;
+                        left: 100%;
                         transform: translateY(-100%);
+                        animation-name: first-move-in;
+                    }
+
+                    @keyframes first-move-in {
+                        0% {
+                            top: 0;
+                            left: 100%
+                        }
+
+                        100% {
+                            top: 100vh - $top;
+                            left: calc(var(--index) * $width + $gap * (var(--index) + 1));
+                        }
                     }
 
                     &:nth-child(2) {
-                        top: 50vh;
+                        top: 0;
+                        left: 100%;
                         transform: translateY(-50%);
+                        animation-name: sec-move-in;
+                    }
+
+                    @keyframes sec-move-in {
+                        0% {
+                            top: 0;
+                            left: 100%
+                        }
+
+                        100% {
+                            top: 50vh;
+                            left: calc(var(--index) * $width + $gap * (var(--index) + 1));
+                        }
                     }
 
                     &:nth-child(3) {
-                        top: $top;
+                        animation-name: third-move-in;
+                        top: 0;
+                        left: 100%;
+                    }
+
+                    @keyframes third-move-in {
+                        0% {
+                            top: 0;
+                            left: 100%
+                        }
+
+                        100% {
+                            top: $top;
+                            left: calc(var(--index) * $width + $gap * (var(--index) + 1));
+                        }
+
                     }
                 }
+
+
             }
         }
     }
