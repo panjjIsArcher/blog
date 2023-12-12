@@ -57,6 +57,51 @@ $duration: 1s;
                 left: 0;
             }
         }
+
+
+        >.projects {
+            overflow: hidden;
+            height: 100vw;
+            width: 100%;
+
+            >.ul {
+                margin: 0;
+                padding: 0;
+                color: #fff;
+                height: 100%;
+                width: 100%;
+                list-style-type: none;
+                overflow: hidden;
+                $gap: 2.5vw;
+                display: flex;
+                flex-wrap: nowrap;
+                position: relative;
+
+                >li {
+                    $width: 30vw;
+                    width: 30vw;
+                    background-color: red;
+                    height: 20vw;
+                    position: absolute;
+                    left: calc(var(--index) * $width + $gap * (var(--index) + 1));
+                    $top: 5vh;
+
+                    &:first-child {
+                        top: 100vh - $top;
+                        transform: translateY(-100%);
+                    }
+
+                    &:nth-child(2) {
+                        top: 50vh;
+                        transform: translateY(-50%);
+                    }
+
+                    &:nth-child(3) {
+                        top: $top;
+                    }
+                }
+            }
+        }
     }
 
 }

@@ -19,3 +19,11 @@ export interface Job {
     describution: string,
     subTitle: string
 }
+
+export interface Project {
+    name: string,
+    id: number,
+    subTitle: string,
+    img: string,
+    url: string
+}

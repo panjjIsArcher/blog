@@ -1,4 +1,4 @@
-import { Describution, Job, Media, Stack } from "@/type/brief"
+import { Describution, Job, Media, Project, Stack } from "@/type/brief"
 
 export const data: Describution[] = [
     {
@@ -92,3 +92,10 @@ export const jobs: Job[] = [
     }]
 
 export const ariticle = "这是文章的"
+
+export const projects: Project[] = [
+    { name: "Celine1", subTitle: "这是Celine的AR", img: require("../public/image/avatar.jpg"), url: "", id: 1 },
+    { name: "Celine2", subTitle: "这是Celine的AR", img: require("../public/image/avatar.jpg"), url: "", id: 2 },
+    { name: "Celine3", subTitle: "这是Celine的AR", img: require("../public/image/avatar.jpg"), url: "", id: 3 },
+    { name: "Celine4", subTitle: "这是Celine的AR", img: require("../public/image/avatar.jpg"), url: "", id: 4 }
+]
