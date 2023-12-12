@@ -68,7 +68,7 @@ export default function Experience() {
     }
 
     const fetch = async () => {
-        await new Promise(resolve => setTimeout(resolve, 6 * 1000))
+        await new Promise(resolve => setTimeout(resolve, 4 * 1000))
         setAriticle(true)
     }
 
