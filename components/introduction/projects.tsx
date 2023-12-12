@@ -5,26 +5,33 @@ import { useEffect, useRef, useState } from "react";
 import { Project as ProjectType } from "@/type/brief";
 import { projects as projectData } from "@/mock/database"
 
-function PorjectList() {
+function PorjectList(props: { onChange: Function }) {
     const [list, setList] = useState<ProjectType[]>([])
+    const [stop, setStop] = useState(false)
     const fetch = async () => {
         const data = await projectData
         return data
     }
 
+    const changeProject = (e: ProjectType) => {
+        props.onChange(e)
+    }
+
     useEffect(() => {
-        fetch().then((data) => {
-            setList(data)
-        })
+        if (!list.length) {
+            fetch().then((data) => {
+                setList(data)
+            })
+        }
+
     })
 
     return <ul className={proStyle.ul}>
         {
-            list.map((e, index) => {
+            list.map(e => {
                 const { id, name, url, img, subTitle } = e
-                return <li key={id} className="project-item">
-                    <style jsx>{`.project-item{--index:${index}}`}</style>
-                    <Project id={id} name={name} subTitle={subTitle} url={url} img={img} />
+                return <li key={id} className={`project-item ${stop ? [proStyle["animation-stop"]] : ""}`}>
+                    <Project id={id} name={name} subTitle={subTitle} url={url} img={img} onChange={changeProject} />
                 </li>
             })
         }
@@ -34,9 +41,11 @@ function PorjectList() {
 export default function Projects() {
     const box = useRef(null)
     const [loaded, setLoaded] = useState(false)
-    const mousemove = (event: any) => {
-        console.log(`x:${event.pageX}, y:${event.pageY}`)
+    const [info, setInfo] = useState<ProjectType>({ id: 0, name: "", img: "", url: "", subTitle: "" })
+    const change = (project: ProjectType) => {
+        setInfo(project)
     }
+
     useEffect(() => {
         intersectionObserver(box.current, (entries) => {
             const isIntersecting: boolean = entries.every((entry: { isIntersecting: boolean }) => entry.isIntersecting)
@@ -45,20 +54,17 @@ export default function Projects() {
             }
         }, { threshold: 0.8 })
 
-        document.addEventListener("mousemove", mousemove)
-
-        return () => {
-            document.removeEventListener("mousemove", mousemove)
-        }
     })
 
 
-    return (<div ref={box} className={proStyle.container} >
+    return (<div ref={box} className={`${proStyle.container}`}>
         {loaded ? <div className={proStyle.middle}>
-            <div className={`${proStyle["left-box"]}  ${proStyle.box}`} />
+            <div className={`${proStyle["left-box"]}  ${proStyle.box}`} >
+                <h3>{info.name}</h3>
+            </div>
             <div className={`${proStyle["right-box"]}  ${proStyle.box}`} />
             <div className={`${proStyle["projects"]}`}>
-                <PorjectList />
+                <PorjectList onChange={change} />
             </div>
         </div> : ""}
     </div>)

@@ -21,6 +21,7 @@ export interface Job {
 }
 
 export interface Project {
+    [x: string]: any,
     name: string,
     id: number,
     subTitle: string,
