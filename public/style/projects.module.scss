@@ -30,6 +30,7 @@ $duration: 1s;
         }
 
         >.left-box {
+            left: -100%;
             clip-path: polygon($rate 0, 0 0, 0 $rate);
             animation-name: move-from-left;
         }
@@ -37,6 +38,7 @@ $duration: 1s;
         >.right-box {
             clip-path: polygon($rate $rate, $rate $rest, 0 $rate);
             animation-name: move-from-right;
+            left: 100%;
         }
 
         @keyframes move-from-left {

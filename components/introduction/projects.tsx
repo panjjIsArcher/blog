@@ -34,7 +34,9 @@ function PorjectList() {
 export default function Projects() {
     const box = useRef(null)
     const [loaded, setLoaded] = useState(false)
-
+    const mousemove = (event: any) => {
+        console.log(`x:${event.pageX}, y:${event.pageY}`)
+    }
     useEffect(() => {
         intersectionObserver(box.current, (entries) => {
             const isIntersecting: boolean = entries.every((entry: { isIntersecting: boolean }) => entry.isIntersecting)
@@ -42,10 +44,16 @@ export default function Projects() {
                 setLoaded(isIntersecting)
             }
         }, { threshold: 0.8 })
+
+        document.addEventListener("mousemove", mousemove)
+
+        return () => {
+            document.removeEventListener("mousemove", mousemove)
+        }
     })
 
 
-    return (<div ref={box} className={proStyle.container}>
+    return (<div ref={box} className={proStyle.container} >
         {loaded ? <div className={proStyle.middle}>
             <div className={`${proStyle["left-box"]}  ${proStyle.box}`} />
             <div className={`${proStyle["right-box"]}  ${proStyle.box}`} />
