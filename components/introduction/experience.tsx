@@ -18,7 +18,7 @@ function Card() {
 
     const labelsList = () => {
         return labels.map((label, index) => {
-            return <li key={label} className={`{experienceStyle.label} label-item`}>
+            return <li key={label} className={`${experienceStyle.label} label-item`}>
                 <style jsx>{`.label-item{--delay: ${index * 0.3}s;}`}</style>
                 {label}
             </li>
@@ -43,8 +43,18 @@ function Card() {
 
 function Ul(props: { cardVisible: boolean }) {
     const cardVisible = props.cardVisible
-    return <ul className={`${experienceStyle.ul} ${cardVisible ? experienceStyle["move-in"] : experienceStyle["move-out"]}`}>
-        {!cardVisible ? '' : <Jobs />}
+    const box = useRef(null)
+    const [section, setSection] = useState(false)
+    useEffect(() => {
+        intersectionObserver(box.current, async (entries) => {
+            const isIntersecting: boolean = entries.every((entry: { isIntersecting: boolean }) => entry.isIntersecting)
+            if (!section && isIntersecting) {
+                setSection(true)
+            }
+        }, { threshold: 0.9 })
+    })
+    return <ul ref={box} className={`${experienceStyle.ul} ${cardVisible ? experienceStyle["move-in"] : experienceStyle["move-out"]}`}>
+        {!cardVisible && !section ? '' : <Jobs />}
     </ul>
 }
 
