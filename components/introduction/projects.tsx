@@ -24,7 +24,7 @@ function PorjectList() {
                 const { id, name, url, img, subTitle } = e
                 return <li key={id} className="project-item">
                     <style jsx>{`.project-item{--index:${index}}`}</style>
-                    <Project id={id} name={name} subTitle={subTitle} url={url} img={img}></Project>
+                    <Project id={id} name={name} subTitle={subTitle} url={url} img={img} />
                 </li>
             })
         }
