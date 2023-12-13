@@ -22,9 +22,13 @@ function ProjectList(props: { onChange: Function }) {
         for (let i = 0; i < list.length; i++) {
             i < markIndex ? pre.push(list[i]) : last.push(list[i])
         }
-
         setList([...last, ...pre])
 
+    }
+
+    const animationEnd = () => {
+        const [first] = list
+        changeProject(first)
     }
 
     useEffect(() => {
@@ -33,10 +37,11 @@ function ProjectList(props: { onChange: Function }) {
             fetch().then((data) => {
                 setList(data)
             })
+
         }
     })
 
-    return <ul className={proStyle.ul}>
+    return <ul className={proStyle.ul} onAnimationEnd={animationEnd}>
         {
             list.map(e => {
                 const { id, name, url, img, subTitle } = e
@@ -60,7 +65,6 @@ export default function Projects(props: { onplay: Function }) {
 
     const play = () => {
         const url = info.url
-
         props.onplay(url)
     }
 
