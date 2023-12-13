@@ -1,5 +1,23 @@
+@import "../../public/style/various.scss";
+
 .player-container {
     >.video {
         height: 95%;
+        border-radius: 0.5rem;
+    }
+
+    >.icon {
+        color: $theme-color;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 0.5rem;
+        cursor: pointer;
+        transform: rotate(0);
+
+        &:hover {
+            transition-duration: 3s;
+            transform: rotate(2turn);
+        }
     }
 }

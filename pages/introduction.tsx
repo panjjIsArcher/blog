@@ -27,7 +27,11 @@ export default function Introduction() {
         const isShow = !!url
         setShowVideoSection(isShow)
         setVideoSrc(url)
+    }
 
+    const close = () => {
+        setShowVideoSection(false)
+        setVideoSrc("")
     }
 
     useEffect(() => {
@@ -58,7 +62,7 @@ export default function Introduction() {
                 <Stack />
             </section>
             <section className={`${introStyle.section} ${introStyle["video-section"]} ${showVideoSection ? introStyle["video-section-show"] : introStyle["video-section-hide"]} `}>
-                <Player videoSrc={videoSrc} />
+                <Player videoSrc={videoSrc} onchangeOpen={close} />
             </section>
             <section className={introStyle.section}>
                 <Projects onplay={playVideo} />

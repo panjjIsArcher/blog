@@ -15,7 +15,7 @@ $delay:1s;
         }
 
         >.video-section {
-            transition-duration: 1s;
+            transition-duration: 1.2s;
             height: 0;
             width: 100%;
             opacity: 0;
@@ -24,12 +24,14 @@ $delay:1s;
 
         >.video-section-hide {
             height: 0;
+            opacity: 0;
         }
 
         >.video-section-show {
-            background-color: red;
             height: 100%;
             opacity: 1;
+            transition-duration: 2s;
+            transition-delay: 0.75s;
         }
     }
 

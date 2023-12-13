@@ -95,7 +95,7 @@ export default function Experience() {
 
     return (<div className={experienceStyle.container}>
         <div className={experienceStyle.left}>
-            <nav className={`${experienceStyle.nav} iconfont   ${!cardVisible ? "icon-zhankai" : "icon-close-bold"}`} onClick={changeNav} />
+            <nav className={`${experienceStyle.nav} iconfont ${!cardVisible ? "icon-zhankai" : "icon-close-bold"}`} onClick={changeNav} />
             <h4 className={experienceStyle.title}>Bruce Dowson</h4>
             <h5 className={experienceStyle.subtitle}>go by 「Jiajie Pan」</h5>
             <Card />
