@@ -15,12 +15,12 @@ function ProjectList(props: { onChange: Function }) {
 
     const changeProject = (project: ProjectType) => {
         props.onChange(project)
+
         const markIndex = list.findIndex((p) => p.id === project.id)
         const pre = []
         const last = []
         for (let i = 0; i < list.length; i++) {
             i < markIndex ? pre.push(list[i]) : last.push(list[i])
-
         }
 
         setList([...last, ...pre])
@@ -48,7 +48,7 @@ function ProjectList(props: { onChange: Function }) {
     </ul>
 }
 
-export default function Projects() {
+export default function Projects(props: { onplay: Function }) {
     const box = useRef(null)
     const [loaded, setLoaded] = useState(false)
     const [info, setInfo] = useState<ProjectType>({ id: 0, name: "", img: "", url: "", subTitle: "" })
@@ -56,6 +56,12 @@ export default function Projects() {
         setInfo({ name: "", id: 0, subTitle: "", img: "", url: "" })
         await new Promise(resolve => setTimeout(resolve, 700))
         setInfo(project)
+    }
+
+    const play = () => {
+        const url = info.url
+
+        props.onplay(url)
     }
 
     useEffect(() => {
@@ -80,7 +86,7 @@ export default function Projects() {
                 {info.id ? <div className={proStyle.desc}>
                     <h3>{info.name}</h3>
                     <p>{info.subTitle}</p>
-                    {!info.url ? <span className={proStyle.btn}>play</span> : ""}
+                    {info.url ? <span className={proStyle.btn} onClick={play}>play</span> : ""}
                 </div> : ""}
             </div>
 

@@ -6,7 +6,7 @@ export function particle(mark, nums = 100) {
     let interactionParticle = null // 随着鼠标移动的单个粒子
 
     const canvas = document.querySelector(mark)
-    // debugger
+    // 
     const ctx = canvas.getContext('2d')
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
