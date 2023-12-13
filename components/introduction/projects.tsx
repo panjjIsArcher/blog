@@ -53,7 +53,6 @@ export default function Projects() {
                 setLoaded(isIntersecting)
             }
         }, { threshold: 0.8 })
-
     })
 
 
