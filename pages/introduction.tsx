@@ -9,6 +9,7 @@ import SlideDown from "@/components/introduction/slideDown"
 import { useEffect, useState } from "react";
 // eslint-disable-next-line
 import src from "@/public/audio/del.mp3";
+import { MODULES } from "@/public/utils/const";
 
 export default function Introduction() {
     const [startLoad, setStartLoad] = useState(false)
@@ -55,19 +56,19 @@ export default function Introduction() {
             <section className={introStyle.section}>
                 <Brief />
             </section>
-            <section className={introStyle.section}>
+            <section className={introStyle.section} id={MODULES.EXPERIENCE}>
                 <Experience />
             </section>
-            <section className={introStyle.section}>
+            <section className={introStyle.section} id={MODULES.STACK}>
                 <Stack />
             </section>
             <section className={`${introStyle.section} ${introStyle["video-section"]} ${showVideoSection ? introStyle["video-section-show"] : introStyle["video-section-hide"]} `}>
                 <Player videoSrc={videoSrc} onchangeOpen={close} />
             </section>
-            <section className={introStyle.section}>
+            <section className={introStyle.section} id={MODULES.PROJECTS}>
                 <Projects onplay={playVideo} />
             </section>
-            <section >
+            <section id={MODULES.SOCIAL}>
                 <Footer />
             </section>
         </div>

@@ -37,7 +37,6 @@ function ProjectList(props: { onChange: Function }) {
             fetch().then((data) => {
                 setList(data)
             })
-
         }
     })
 

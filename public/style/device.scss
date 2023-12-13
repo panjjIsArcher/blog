@@ -5,28 +5,25 @@
     @return $px / $browser-default-font-size * 1rem;
 }
 
+body,
+html {
+    scroll-behavior: smooth; // 锚点平滑滚动
+}
+
 @media screen and (max-width:$sm-device) {
-    body {
-        
-    }
+    body {}
 }
 
 @media screen and (min-width: $sm-device) and (max-width:$md-device) {
-    body {
-        background-color: green;
-    }
+    body {}
 }
 
 @media screen and (min-width:$md-device) and (max-width:$lg-device) {
-    body {
-        background-color: blue;
-    }
+    body {}
 }
 
 @media screen and (min-width:$lg-device) and (max-width:$xl-device) {
-    body {
-        background-color: yellow;
-    }
+    body {}
 }
 
 @media screen and (min-width:$xl-device) {}
