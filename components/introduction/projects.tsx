@@ -5,32 +5,42 @@ import { useEffect, useRef, useState } from "react";
 import { Project as ProjectType } from "@/type/brief";
 import { projects as projectData } from "@/mock/database"
 
-function PorjectList(props: { onChange: Function }) {
+function ProjectList(props: { onChange: Function }) {
     const [list, setList] = useState<ProjectType[]>([])
-    const [stop, setStop] = useState(false)
+
     const fetch = async () => {
         const data = await projectData
         return data
     }
 
-    const changeProject = (e: ProjectType) => {
-        props.onChange(e)
+    const changeProject = (project: ProjectType) => {
+        props.onChange(project)
+        const markIndex = list.findIndex((p) => p.id === project.id)
+        const pre = []
+        const last = []
+        for (let i = 0; i < list.length; i++) {
+            i < markIndex ? pre.push(list[i]) : last.push(list[i])
+
+        }
+
+        setList([...last, ...pre])
+
     }
 
     useEffect(() => {
         if (!list.length) {
+            // 仅仅是首次请求
             fetch().then((data) => {
                 setList(data)
             })
         }
-
     })
 
     return <ul className={proStyle.ul}>
         {
             list.map(e => {
                 const { id, name, url, img, subTitle } = e
-                return <li key={id} className={`project-item ${stop ? [proStyle["animation-stop"]] : ""}`}>
+                return <li key={id} className={`project-item `}>
                     <Project id={id} name={name} subTitle={subTitle} url={url} img={img} onChange={changeProject} />
                 </li>
             })
@@ -70,7 +80,7 @@ export default function Projects() {
                 {info.id ? <div className={proStyle.desc}>
                     <h3>{info.name}</h3>
                     <p>{info.subTitle}</p>
-                    {!info.url ? <span className={proStyle.btn}> play </span> : ""}
+                    {!info.url ? <span className={proStyle.btn}>play</span> : ""}
                 </div> : ""}
             </div>
 
@@ -82,7 +92,7 @@ export default function Projects() {
             </div>
 
             <div className={`${proStyle["projects"]}`}>
-                <PorjectList onChange={change} />
+                <ProjectList onChange={change} />
             </div>
         </div> : ""}
     </div>)
