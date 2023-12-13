@@ -20,7 +20,7 @@ export default function Introduction() {
 
     const play = () => {
         const audio = new Audio(src)
-        audio.play()
+        // audio.play()
         audioPLayer = audio
     }
 
