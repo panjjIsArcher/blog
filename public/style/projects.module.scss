@@ -13,11 +13,14 @@ $duration: 1s;
         width: 100%;
         overflow: hidden;
 
+        // --bg-image:""
         >.box {
             background-color: $theme-color;
             position: absolute;
             width: 100vw;
             height: 100vh;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
 
             animation: {
                 name: bg-color;
@@ -25,12 +28,151 @@ $duration: 1s;
                 delay: $duration;
                 fill-mode: forwards;
             }
+
+            >.cover {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(#000, 0.7);
+
+                animation: {
+                    duration: $duration;
+                    fill-mode: forwards;
+                }
+            }
+
+            >.cover-hide {
+                animation-name: hide;
+                opacity: 1;
+            }
+
+            @keyframes hide {
+
+                to {
+                    opacity: 0;
+                }
+            }
+
+            >.cover-show {
+                animation-name: show;
+                opacity: 0;
+            }
+
+            @keyframes show {
+
+                to {
+                    opacity: 1;
+                }
+            }
         }
 
         >.left-box {
             left: -100%;
             clip-path: polygon($rate 0, 0 0, 0 $rate);
             animation-name: move-from-left;
+            color: #fff;
+            text-align: left;
+            text-indent: 0.5rem;
+
+            >.desc {
+
+                >h3,
+                >p,
+                >.btn {
+                    margin: 0;
+                    user-select: none;
+                    opacity: 0;
+                    transform: translateY(0.2rem);
+                    font-weight: bold;
+
+                    animation: {
+                        duration: 0.7s;
+                        fill-mode: forwards;
+                        name: show;
+                    }
+                }
+
+                h3 {
+                    font-size: 0.8rem;
+                    margin-bottom: 0;
+                    text-transform: capitalize;
+                }
+
+                p {
+                    width: 50%;
+                    font-size: 0.3rem;
+                    animation-delay: 0.2s;
+                    min-height: 0.3rem * 10;
+                }
+
+                >.btn {
+                    $size: 0.75rem;
+                    position: absolute;
+                    animation-delay: 0.2s;
+                    width: 2 * $size;
+                    height: $size;
+                    cursor: pointer;
+                    border-radius: $size;
+                    background-color: $sub-color;
+                    color: $theme-color;
+                    text-transform: uppercase;
+                    font-size: 0.25rem;
+                    line-height: $size;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    left: 0.5rem;
+                    overflow: hidden;
+                    z-index: 1;
+
+                    &::after,
+                    &::before {
+                        position: absolute;
+                    }
+
+                    &::before {
+                        content: "";
+                        animation: rotate 3s linear infinite;
+                        width: 3 * $size;
+                        height: 3 * $size;
+                        background-image: conic-gradient(#d82020, rgb(25, 170, 232));
+                    }
+
+                    &::after {
+                        text-indent: 0;
+                        text-align: center;
+                        content: "play";
+                        border-radius: inherit;
+                        width: 1.7 * $size;
+                        height: 0.75 * $size;
+                        background-color: $sub-color;
+                        border: 0.06rem solid $theme-color;
+                        line-height: 0.75 * $size;
+                        text-indent: 0;
+                        letter-spacing: 0.03rem;
+                    }
+
+                    @keyframes rotate {
+                        to {
+                            transform: rotate(1turn);
+                        }
+                    }
+
+                }
+
+                @keyframes show {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(0.2rem);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0rem);
+                    }
+                }
+            }
+
         }
 
         >.right-box {
@@ -56,6 +198,12 @@ $duration: 1s;
 
             100% {
                 left: 0;
+            }
+        }
+
+        @keyframes bg-opacity {
+            to {
+                opacity: 1;
             }
         }
 

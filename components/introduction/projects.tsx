@@ -42,7 +42,9 @@ export default function Projects() {
     const box = useRef(null)
     const [loaded, setLoaded] = useState(false)
     const [info, setInfo] = useState<ProjectType>({ id: 0, name: "", img: "", url: "", subTitle: "" })
-    const change = (project: ProjectType) => {
+    const change = async (project: ProjectType) => {
+        setInfo({ name: "", id: 0, subTitle: "", img: "", url: "" })
+        await new Promise(resolve => setTimeout(resolve, 700))
         setInfo(project)
     }
 
@@ -55,13 +57,30 @@ export default function Projects() {
         }, { threshold: 0.8 })
     })
 
-
+    const backgroundImage = info.img ? info.img.default.src : ""
     return (<div ref={box} className={`${proStyle.container}`}>
+
         {loaded ? <div className={proStyle.middle}>
-            <div className={`${proStyle["left-box"]}  ${proStyle.box}`} >
-                <h3>{info.name}</h3>
+
+            <div className={`${proStyle["left-box"]}  ${proStyle.box} box`} >
+                <style jsx>
+                    {`.box{ background-image:url("${backgroundImage}");}`}
+                </style>
+                <div className={`${proStyle.cover} ${info.id ? proStyle["cover-hide"] : proStyle["cover-show"]}`} />
+                {info.id ? <div className={proStyle.desc}>
+                    <h3>{info.name}</h3>
+                    <p>{info.subTitle}</p>
+                    {!info.url ? <span className={proStyle.btn}> play </span> : ""}
+                </div> : ""}
             </div>
-            <div className={`${proStyle["right-box"]}  ${proStyle.box}`} />
+
+            <div className={`${proStyle["right-box"]}  ${proStyle.box} box`} >
+                <style jsx>
+                    {`.box{ background-image:url("${backgroundImage}");}`}
+                </style>
+                <div className={`${proStyle.cover} ${info.id ? proStyle["cover-hide"] : proStyle["cover-show"]}`} />
+            </div>
+
             <div className={`${proStyle["projects"]}`}>
                 <PorjectList onChange={change} />
             </div>
