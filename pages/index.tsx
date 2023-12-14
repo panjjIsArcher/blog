@@ -1,7 +1,7 @@
 
 
 import homeStyle from "@/public/style/home.module.scss"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Router from "next/router"
 const ROUTES = require("../public/router/router")
 
@@ -20,6 +20,12 @@ export default function Home() {
   const jump = () => {
     Router.push({ pathname: ROUTES.INTRODUCTION })
   }
+
+  useEffect(() => {
+    // 预加载下一个页面的资源 节省用户等待时间
+    Router.prefetch(ROUTES.INTRODUCTION)
+
+  })
 
   return (
     <div className={homeStyle.container}>
