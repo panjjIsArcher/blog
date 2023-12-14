@@ -1,6 +1,7 @@
 import "../public/style/device.scss";
 import "../public/style/universal.scss";
 import "../public/font/iconfont.css";
+
 import { reCalc } from "@/public/utils/deviceAdapter";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router"
