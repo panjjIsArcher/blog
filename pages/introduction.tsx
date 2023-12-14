@@ -8,7 +8,7 @@ import Experience from "@/components/introduction/experience";
 import SlideDown from "@/components/introduction/slideDown"
 import { useEffect, useState } from "react";
 // eslint-disable-next-line
-import src from "@/public/audio/del.mp3";
+// import src from "@/public/audio/del.mp3";
 import { MODULES } from "@/public/utils/const";
 
 export default function Introduction() {
@@ -19,9 +19,9 @@ export default function Introduction() {
     let audioPLayer: HTMLAudioElement | null;
 
     const play = () => {
-        const audio = new Audio(src)
+        // const audio = new Audio(src)
         // audio.play()
-        audioPLayer = audio
+        // audioPLayer = audio
     }
 
     const playVideo = (url: string) => {
@@ -36,7 +36,7 @@ export default function Introduction() {
     }
 
     useEffect(() => {
-        play()
+        // play()
         setStartLoad(true)
         setStartScroll(true)
 

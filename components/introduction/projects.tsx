@@ -10,7 +10,12 @@ function ProjectList(props: { onChange: Function }) {
 
     const fetch = async () => {
         const data = await projectData
-        return data
+        const list = data.map(p => {
+            return {
+                ...p
+            }
+        })
+        return list
     }
 
     const changeProject = (project: ProjectType) => {

@@ -11,6 +11,7 @@ export default function Player(props: { videoSrc: string, onchangeOpen: Function
         video.src = ""
         video.pause()
     }
+
     useEffect(() => {
         const video: any = document.querySelector("#video")
         if (props.videoSrc) {
@@ -23,6 +24,6 @@ export default function Player(props: { videoSrc: string, onchangeOpen: Function
 
     return <div className={playerStyle["player-container"]}>
         <i className={`${playerStyle.icon} iconfont icon-close-bold`} onClick={changeOpen} />
-        <video src={props.videoSrc} className={`${playerStyle.video} position-center `} id="video" controls />
+        <video className={`${playerStyle.video} position-center `} id="video" controls />
     </div>
 }
